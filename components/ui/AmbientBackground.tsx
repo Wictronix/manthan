@@ -18,7 +18,7 @@ const AmbientBackground = () => {
         let height = window.innerHeight;
 
         // Configuration
-        const particleCount = 120; // Increased density
+        const particleCount = 100; // Reduced for clarity
         const connectionDistance = 150;
         const mouseParams = { x: -1000, y: -1000, radius: 200 };
 
@@ -53,8 +53,8 @@ const AmbientBackground = () => {
                 this.y = Math.random() * height;
                 this.vx = (Math.random() - 0.5) * 0.5;
                 this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2 + 1;
-                this.color = Math.random() > 0.5 ? "rgba(236, 72, 153, 0.5)" : "rgba(167, 139, 250, 0.5)";
+                this.size = Math.random() * 1.5 + 0.5; // Smaller particles
+                this.color = Math.random() > 0.5 ? "rgba(236, 72, 153, 0.3)" : "rgba(167, 139, 250, 0.3)"; // Lower opacity
             }
 
             update(mouseX: number, mouseY: number) {
@@ -179,7 +179,7 @@ const AmbientBackground = () => {
         <canvas
             ref={canvasRef}
             className="fixed inset-0 pointer-events-none z-[1]"
-            style={{ mixBlendMode: "screen" }}
+            style={{ mixBlendMode: "normal" }}
         />
     );
 };
