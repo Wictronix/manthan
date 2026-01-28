@@ -8,10 +8,10 @@ const nextConfig: NextConfig = {
         hostname: 'placehold.co',
       },
     ],
-    unoptimized: true, // Required for static export if not using a cloud loader
+    // unoptimized: true, // Removed for Vercel Image Optimization
   },
-  output: 'export', // Enforce static export
-  trailingSlash: true, // Optional: helpful for static hosting
+  // output: 'export', // Removed to allow standard server/Vercel deployment
+  trailingSlash: true,
 };
 
 export default nextConfig;
