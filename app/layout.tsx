@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { AmbientBackground } from "@/components/ui/AmbientBackground";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -29,8 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${poppins.variable} ${inter.variable} antialiased flex flex-col min-h-screen`}
+        className={`${poppins.variable} ${inter.variable} antialiased flex flex-col min-h-screen relative`}
       >
+        <AmbientBackground />
         <Navbar />
         <main className="flex-grow">
           {children}

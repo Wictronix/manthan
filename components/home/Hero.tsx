@@ -15,25 +15,35 @@ const Hero = () => {
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
     return (
-        <div ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden bg-dark-bg text-center">
+        <div
+            ref={containerRef}
+            className="relative h-screen pt-20 flex items-center justify-center overflow-hidden bg-primary-bg text-center"
+        >
 
-            {/* Parallax Background */}
+
+            {/* Background Layers */}
             <motion.div
                 style={{ y, opacity }}
                 className="absolute inset-0 z-0"
             >
                 <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 grayscale"
-                    style={{ backgroundImage: 'url(https://placehold.co/1920x1080/0a0a0a/ECB25C?text=Manthan+Background)' }}
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.1] grayscale"
+                    style={{ backgroundImage: 'url(https://placehold.co/1920x1080/0a0a0a/EC4899?text=Manthan+Cyber+Vision)' }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/80 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/50 via-transparent to-dark-bg" />
+                {/* Pattern Layer */}
+                <div className="absolute inset-0 bg-grid opacity-[0.05] mask-radial-fade" />
+
+                {/* Ambient Orbs */}
+                <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-grad-start/10 rounded-full blur-[120px] animate-float opacity-50" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-neon-magenta/5 rounded-full blur-[100px] animate-float opacity-30" style={{ animationDelay: '2s' }} />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-bg via-primary-bg/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-b from-primary-bg/50 via-transparent to-primary-bg" />
             </motion.div>
 
             {/* Floating Elements (Cyber/Tech Deco) */}
-            <div className="absolute top-1/4 left-10 w-24 h-24 border border-primary-blue/20 rounded-full animate-[spin_10s_linear_infinite]" />
-            <div className="absolute bottom-1/4 right-10 w-32 h-32 border border-primary-yellow/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
-            <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-primary-glow rounded-full shadow-[0_0_10px_#FFD700] animate-pulse" />
+            <div className="absolute top-1/4 left-10 w-24 h-24 border border-grad-mid/20 rounded-full animate-[spin_10s_linear_infinite]" />
+            <div className="absolute bottom-1/4 right-10 w-32 h-32 border border-neon-magenta/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
 
             <div className="relative z-10 px-4 max-w-6xl mx-auto">
                 <motion.div
@@ -42,7 +52,7 @@ const Hero = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="mb-6"
                 >
-                    <span className="inline-block py-1 px-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs md:text-sm font-medium text-primary-blue tracking-widest uppercase">
+                    <span className="inline-block py-1 px-4 rounded-full border border-white/5 bg-white/5 backdrop-blur-md text-xs md:text-sm font-medium text-soft-lavender tracking-widest uppercase">
                         Tata Institute of Social Sciences Presents
                     </span>
                 </motion.div>
@@ -51,9 +61,9 @@ const Hero = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    className="text-7xl md:text-9xl lg:text-[12rem] font-bold font-poppins mb-2 tracking-tighter leading-none"
+                    className="text-7xl md:text-9xl lg:text-[11rem] font-bold font-poppins mb-2 tracking-tighter leading-none"
                 >
-                    <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-text-secondary to-grad-mid drop-shadow-[0_0_30px_rgba(124,58,237,0.2)]">
                         MANTHAN
                     </span>
                 </motion.h1>
@@ -62,33 +72,33 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-2xl md:text-4xl font-light mb-10 text-primary-yellow tracking-widest uppercase"
+                    className="text-2xl md:text-4xl font-light mb-10 text-soft-lavender tracking-widest uppercase opacity-80"
                 >
-                    Dare<span className="text-white/20 mx-4">/</span>Dream<span className="text-white/20 mx-4">/</span>Discover
+                    Dare<span className="text-white/10 mx-4">/</span>Dream<span className="text-white/10 mx-4">/</span>Discover
                 </motion.p>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="text-lg md:text-xl text-gray-400 font-mono mb-12 flex items-center justify-center gap-4"
+                    className="text-sm md:text-base text-text-muted font-mono mb-12 flex items-center justify-center gap-4"
                 >
-                    <span className="text-primary-blue">&#60;</span>
+                    <span className="text-neon-magenta opacity-50">&#60;</span>
                     February 12–13, 2026
-                    <span className="text-primary-blue">/&#62;</span>
+                    <span className="text-neon-magenta opacity-50">/&#62;</span>
                 </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
+                    transition={{ duration: 0.8, delay: 1 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
-                    <Button size="lg" variant="primary" href="/events" className="min-w-[200px] shadow-[0_0_40px_rgba(236,178,92,0.2)]">
+                    <Button size="lg" variant="primary" href="/events">
                         Register Now
                     </Button>
-                    <Button size="lg" variant="outline" href="/about" className="min-w-[200px]">
-                        Explore
+                    <Button size="lg" variant="outline" href="/about">
+                        Explore Domain
                     </Button>
                 </motion.div>
             </div>
@@ -100,8 +110,8 @@ const Hero = () => {
                 transition={{ delay: 1.5, duration: 1 }}
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
             >
-                <span className="text-[10px] uppercase tracking-widest text-gray-600">Scroll</span>
-                <div className="w-[1px] h-12 bg-gradient-to-b from-primary-blue to-transparent"></div>
+                <span className="text-[10px] uppercase tracking-widest text-text-muted font-mono">sys.scroll()</span>
+                <div className="w-[1px] h-12 bg-gradient-to-b from-soft-lavender to-transparent"></div>
             </motion.div>
         </div>
     );

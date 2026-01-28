@@ -16,11 +16,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, href, variant = "primary", size = "md", fullWidth, children, ...props }, ref) => {
 
         const variants = {
-            primary: "bg-gradient-to-r from-primary-yellow to-yellow-500 text-dark-bg hover:shadow-[0_0_20px_rgba(236,178,92,0.6)] border border-transparent",
-            secondary: "bg-transparent border border-primary-blue text-primary-blue hover:bg-primary-blue/10 hover:shadow-[0_0_15px_rgba(0,240,255,0.4)]",
-            accent: "bg-accent-red text-white hover:bg-red-600 hover:shadow-[0_0_20px_rgba(255,0,60,0.5)] border border-transparent",
-            outline: "bg-transparent border border-white/20 text-white hover:border-white/50 hover:bg-white/5",
-            ghost: "bg-transparent text-gray-400 hover:text-white hover:bg-white/5",
+            primary: "bg-gradient-to-r from-grad-start via-grad-mid to-grad-end text-white hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] border border-transparent shadow-[0_0_15px_rgba(124,58,237,0.3)]",
+            secondary: "bg-transparent border border-neon-magenta text-neon-magenta hover:bg-neon-magenta/10 hover:shadow-[0_0_15px_rgba(236,72,153,0.4)]",
+            accent: "bg-neon-magenta text-white hover:bg-pink-600 hover:shadow-[0_0_20px_rgba(236,72,153,0.5)] border border-transparent",
+            outline: "bg-transparent border border-white/20 text-white hover:border-neon-magenta/50 hover:bg-neon-magenta/5 hover:text-neon-magenta",
+            ghost: "bg-transparent text-text-muted hover:text-white hover:bg-white/5",
         };
 
         const sizes = {
@@ -40,7 +40,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         const animationProps = {
             whileHover: { scale: 1.02, y: -2 },
             whileTap: { scale: 0.98 },
-            transition: { type: "spring", stiffness: 400, damping: 17 }
+            transition: { type: "spring", stiffness: 400, damping: 17 } as const
         };
 
         if (href) {

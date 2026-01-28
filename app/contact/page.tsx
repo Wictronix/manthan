@@ -21,60 +21,65 @@ export default function ContactPage() {
 
     return (
         <>
-            <Section background="dark" className="pt-32 pb-10 text-center">
-                <h1 className="text-5xl md:text-7xl font-bold font-poppins text-white mb-4 tracking-tight">
-                    Establish <span className="text-primary-blue">Contact</span>
+            <Section background="default" pattern="grid" mask="radial" className="pt-32 pb-10 text-center relative overflow-hidden">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-grad-mid/5 blur-[120px] pointer-events-none -z-10" />
+                <h1 className="text-5xl md:text-7xl font-bold font-poppins text-white mb-4 tracking-tighter">
+                    Establish <span className="text-transparent bg-clip-text bg-gradient-to-r from-grad-start via-grad-mid to-grad-end drop-shadow-[0_0_15px_rgba(124,58,237,0.3)]">Interface</span>
                 </h1>
-                <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light">
-                    Channels are open. Awaiting input.
+                <p className="text-text-muted text-lg max-w-2xl mx-auto font-light">
+                    Channels are open. Awaiting telemetry.
                 </p>
             </Section>
 
-            <Section background="dark" className="min-h-screen border-t border-white/5">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            <Section background="default" pattern="dot" mask="linear" showOrbs orbColor="secondary" className="min-h-screen border-t border-white/5 relative">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 text-left">
                     {/* Contact Form */}
-                    <div>
-                        <h2 className="text-2xl font-bold font-poppins text-white mb-8 border-l-4 border-primary-blue pl-4">Send Message</h2>
+                    <div className="relative z-10">
+                        <h2 className="text-xl font-bold font-poppins text-white mb-10 border-l-2 border-neon-magenta pl-4 tracking-widest uppercase">
+                            Request_Access
+                        </h2>
                         <form onSubmit={handleFormSubmit} className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest ml-1">Identity</label>
-                                    <input type="text" required className="w-full px-4 py-3 bg-white/5 rounded-sm border border-white/10 text-white focus:outline-none focus:border-primary-blue focus:bg-white/10 transition-all" placeholder="John Doe" />
+                                    <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Identity.mask</label>
+                                    <input type="text" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="COMMANDER_X" />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest ml-1">Comms</label>
-                                    <input type="tel" required className="w-full px-4 py-3 bg-white/5 rounded-sm border border-white/10 text-white focus:outline-none focus:border-primary-blue focus:bg-white/10 transition-all" placeholder="+91 99999 99999" />
+                                    <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Comms.node</label>
+                                    <input type="tel" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="+91 XXXX XXXX" />
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <label className="text-xs font-bold text-gray-500 uppercase tracking-widest ml-1">Email</label>
-                                <input type="email" required className="w-full px-4 py-3 bg-white/5 rounded-sm border border-white/10 text-white focus:outline-none focus:border-primary-blue focus:bg-white/10 transition-all" placeholder="john@example.com" />
+                                <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Auth.e-mail</label>
+                                <input type="email" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="user@interface.net" />
                             </div>
                             <div className="space-y-2">
-                                <label className="text-xs font-bold text-gray-500 uppercase tracking-widest ml-1">Transmission</label>
-                                <textarea required rows={5} className="w-full px-4 py-3 bg-white/5 rounded-sm border border-white/10 text-white focus:outline-none focus:border-primary-blue focus:bg-white/10 transition-all" placeholder="Enter your message..."></textarea>
+                                <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Message.packet</label>
+                                <textarea required rows={5} className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="Enter transmission details..."></textarea>
                             </div>
-                            <Button type="submit" variant="primary" size="lg" fullWidth className="shadow-[0_0_20px_rgba(236,178,92,0.2)]">
-                                Transmit Data
+                            <Button type="submit" variant="primary" size="lg" fullWidth>
+                                EXEC_SEND
                             </Button>
                         </form>
                     </div>
 
                     {/* FAQ */}
-                    <div>
-                        <h2 className="text-2xl font-bold font-poppins text-white mb-8 border-l-4 border-primary-yellow pl-4">Protocols (FAQ)</h2>
+                    <div className="relative z-10">
+                        <h2 className="text-xl font-bold font-poppins text-white mb-10 border-l-2 border-grad-end pl-4 tracking-widest uppercase">
+                            System_Log (FAQ)
+                        </h2>
                         <div className="space-y-4">
                             {FAQS.map((faq) => (
-                                <div key={faq.id} className="border border-white/5 rounded-sm bg-white/[0.02]">
+                                <div key={faq.id} className="border border-white/5 rounded-sm bg-secondary-surface/20 backdrop-blur-sm transition-all hover:bg-secondary-surface/30">
                                     <button
                                         onClick={() => toggleFaq(faq.id)}
-                                        className="w-full px-6 py-4 flex items-center justify-between text-left font-medium text-gray-200 hover:text-primary-yellow hover:bg-white/5 transition-all focus:outline-none"
+                                        className="w-full px-6 py-5 flex items-center justify-between text-left font-medium text-text-secondary hover:text-white transition-all focus:outline-none border-b border-transparent group"
                                     >
-                                        {faq.question}
-                                        {openFaq === faq.id ? <FiMinus className="text-primary-blue" /> : <FiPlus className="text-gray-600" />}
+                                        <span className="font-mono text-sm group-hover:translate-x-1 transition-transform">{faq.question}</span>
+                                        {openFaq === faq.id ? <FiMinus className="text-neon-magenta" /> : <FiPlus className="text-text-muted" />}
                                     </button>
                                     {openFaq === faq.id && (
-                                        <div className="px-6 pb-6 text-gray-400 leading-relaxed border-t border-white/5 bg-black/20">
+                                        <div className="px-6 py-6 text-text-muted leading-relaxed bg-primary-bg/40 font-light text-base border-t border-white/5 animate-in fade-in slide-in-from-top-2 duration-300">
                                             {faq.answer}
                                         </div>
                                     )}
@@ -86,25 +91,28 @@ export default function ContactPage() {
             </Section>
 
             {/* Core Team */}
-            <Section background="dark" className="py-24 border-t border-white/5">
-                <h2 className="text-3xl font-bold font-poppins text-white mb-16 text-center">
-                    Command <span className="text-primary-blue">Center</span>
+            <Section background="default" pattern="grid" mask="linear" showOrbs orbColor="primary" className="py-24 border-t border-white/5 relative">
+                <div className="absolute inset-0 bg-grad-mid/5 mix-blend-overlay pointer-events-none"></div>
+                <h2 className="text-3xl font-bold font-poppins text-white mb-16 text-center tracking-tight">
+                    Nodes <span className="text-soft-lavender">&</span> Operators
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
                     {TEAM.map((member) => (
-                        <div key={member.id} className="bg-dark-surface p-8 rounded-2xl border border-white/5 flex flex-col items-center text-center hover:border-white/20 transition-colors shadow-lg group">
-                            <div className="w-32 h-32 relative rounded-full overflow-hidden mb-6 border-2 border-white/10 group-hover:border-primary-yellow transition-all shadow-[0_0_20px_rgba(0,0,0,0.5)]">
-                                <Image src={member.image} alt={member.name} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                            </div>
-                            <h3 className="text-xl font-bold font-poppins text-white">{member.name}</h3>
-                            <p className="text-primary-blue font-mono text-sm mb-6 uppercase tracking-wider">{member.role}</p>
+                        <div key={member.id} className="bg-elevated-section/40 backdrop-blur-md p-10 rounded-2xl border border-white/5 flex flex-col items-center text-center hover:border-soft-lavender/30 transition-all duration-500 shadow-2xl group relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-soft-lavender/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
 
-                            <div className="space-y-2 w-full">
-                                <a href={`tel:${member.phone}`} className="flex items-center justify-center gap-2 text-sm text-gray-500 hover:text-white transition-colors p-3 rounded-md hover:bg-white/5">
-                                    <FiPhone /> {member.phone}
+                            <div className="w-32 h-32 relative rounded-full overflow-hidden mb-8 border-2 border-white/10 group-hover:border-neon-magenta transition-all duration-500 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                                <Image src={member.image} alt={member.name} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                            </div>
+                            <h3 className="text-xl font-bold font-poppins text-white mb-1">{member.name}</h3>
+                            <p className="text-neon-magenta font-mono text-[10px] mb-8 uppercase tracking-[0.2em] opacity-80">{member.role}</p>
+
+                            <div className="space-y-2 w-full pt-6 border-t border-white/5">
+                                <a href={`tel:${member.phone}`} className="flex items-center justify-center gap-3 text-sm text-text-muted hover:text-white transition-colors p-3 rounded-md hover:bg-white/5">
+                                    <FiPhone className="text-soft-lavender opacity-60" /> <span className="font-mono">{member.phone}</span>
                                 </a>
-                                <a href={`mailto:${member.email}`} className="flex items-center justify-center gap-2 text-sm text-gray-500 hover:text-white transition-colors p-3 rounded-md hover:bg-white/5">
-                                    <FiMail /> {member.email}
+                                <a href={`mailto:${member.email}`} className="flex items-center justify-center gap-3 text-sm text-text-muted hover:text-white transition-colors p-3 rounded-md hover:bg-white/5">
+                                    <FiMail className="text-soft-lavender opacity-60" /> <span className="font-mono">{member.email}</span>
                                 </a>
                             </div>
                         </div>

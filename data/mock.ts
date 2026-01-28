@@ -11,7 +11,7 @@ export const EVENTS: Event[] = [
         date: 'February 12, 2026',
         time: '10:00 AM',
         venue: 'Convention Centre',
-        image: 'https://placehold.co/800x600/0a0a0a/ECB25C?text=Tattvabodha',
+        image: '/images/02_FLAGSHIP_EVENTS/Tattvabodha.jpg',
         rules: [
             'Pre-registration is mandatory.',
             'Formally dressed is encouraged.',
@@ -34,7 +34,7 @@ export const EVENTS: Event[] = [
         date: 'February 12, 2026',
         time: '11:00 AM',
         venue: 'Auditorium',
-        image: 'https://placehold.co/800x600/0a0a0a/00F0FF?text=ConsultISS',
+        image: '/images/02_FLAGSHIP_EVENTS/consultiss.png',
         rules: [
             'Teams of 3 members.',
             'Solutions must be submitted in PDF format.',
@@ -57,7 +57,7 @@ export const EVENTS: Event[] = [
         date: 'February 13, 2026',
         time: '11:00 AM',
         venue: 'Tech Corridor',
-        image: 'https://placehold.co/800x600/0a0a0a/FF003C?text=Dakshya',
+        image: '/images/02_FLAGSHIP_EVENTS/Dakshya.jpg',
         rules: [
             'Laptops are required.',
             'Basic knowledge of analytics tools is mandatory.',
@@ -80,7 +80,7 @@ export const EVENTS: Event[] = [
         date: 'February 13, 2026',
         time: '2:00 PM',
         venue: 'Seminar Hall',
-        image: 'https://placehold.co/800x600/0a0a0a/EDEDED?text=Srijan',
+        image: '/images/02_FLAGSHIP_EVENTS/Srijan.jpg',
         rules: [
             'Role-play rounds involved.',
             'Team size: 2 members.',
