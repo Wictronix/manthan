@@ -6,72 +6,117 @@ import Link from "next/link";
 import React from "react";
 
 interface ButtonProps extends HTMLMotionProps<"button"> {
-    href?: string;
-    variant?: "primary" | "secondary" | "outline" | "ghost" | "accent";
-    size?: "sm" | "md" | "lg";
-    fullWidth?: boolean;
+  href?: string;
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "accent";
+  size?: "sm" | "md" | "lg";
+  fullWidth?: boolean;
+  children?: React.ReactNode;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ className, href, variant = "primary", size = "md", fullWidth, children, ...props }, ref) => {
+  (
+    {
+      className,
+      href,
+      variant = "primary",
+      size = "md",
+      fullWidth,
+      children,
+      ...props
+    },
+    ref
+  ) => {
+    const variants = {
+      primary:
+        "relative overflow-hidden rounded-xl text-white font-semibold \
+        bg-gradient-to-r from-[#7C3AED] via-[#EC4899] to-[#22D3EE] \
+        bg-[length:200%_200%] animate-gradient \
+        border border-white/10 \
+        shadow-[0_0_30px_rgba(236,72,153,0.45)] \
+        hover:shadow-[0_0_45px_rgba(236,72,153,0.85)]",
 
-        const variants = {
-            primary: "bg-gradient-to-r from-grad-start via-grad-mid to-grad-end text-white hover:shadow-[0_0_20px_rgba(236,72,153,0.6)] border border-transparent shadow-[0_0_15px_rgba(124,58,237,0.3)]",
-            secondary: "bg-transparent border border-neon-magenta text-neon-magenta hover:bg-neon-magenta/10 hover:shadow-[0_0_15px_rgba(236,72,153,0.4)]",
-            accent: "bg-neon-magenta text-white hover:bg-pink-600 hover:shadow-[0_0_20px_rgba(236,72,153,0.5)] border border-transparent",
-            outline: "bg-transparent border border-white/20 text-white hover:border-neon-magenta/50 hover:bg-neon-magenta/5 hover:text-neon-magenta",
-            ghost: "bg-transparent text-text-muted hover:text-white hover:bg-white/5",
-        };
+      secondary:
+        "relative overflow-hidden rounded-xl \
+        bg-transparent text-neon-magenta \
+        border border-neon-magenta/60 \
+        hover:bg-neon-magenta/10 \
+        hover:shadow-[0_0_25px_rgba(236,72,153,0.5)]",
 
-        const sizes = {
-            sm: "px-4 py-2 text-xs uppercase tracking-wider",
-            md: "px-6 py-3 text-sm uppercase tracking-wider",
-            lg: "px-8 py-4 text-base font-bold uppercase tracking-widest",
-        };
+      accent:
+        "relative overflow-hidden rounded-xl \
+        bg-neon-magenta text-white \
+        hover:bg-pink-600 \
+        hover:shadow-[0_0_30px_rgba(236,72,153,0.7)]",
 
-        const classes = cn(
-            "inline-flex items-center justify-center rounded-sm font-medium transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:pointer-events-none relative overflow-hidden group",
-            variants[variant],
-            sizes[size],
-            fullWidth && "w-full",
-            className
-        );
+      outline:
+        "relative overflow-hidden rounded-xl \
+        bg-transparent text-white \
+        border border-white/20 \
+        hover:border-neon-magenta/60 \
+        hover:bg-neon-magenta/5 \
+        hover:text-neon-magenta",
 
-        const animationProps = {
-            whileHover: { scale: 1.02, y: -2 },
-            whileTap: { scale: 0.98 },
-            transition: { type: "spring", stiffness: 400, damping: 17 } as const
-        };
+      ghost:
+        "relative overflow-hidden rounded-xl \
+        bg-transparent text-text-muted \
+        hover:text-white hover:bg-white/5",
+    };
 
-        if (href) {
-            return (
-                <Link href={href} className={fullWidth ? "w-full" : ""}>
-                    <motion.button
-                        {...animationProps}
-                        className={classes}
-                        {...(props as any)}
-                    >
-                        {children}
-                        {/* Gloss Effect Line */}
-                        {variant === 'primary' && (
-                            <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent w-full h-full" />
-                        )}
-                    </motion.button>
-                </Link>
-            );
-        }
+    const sizes = {
+      sm: "px-4 py-2 text-xs uppercase tracking-wider",
+      md: "px-6 py-3 text-sm uppercase tracking-wider",
+      lg: "px-8 py-4 text-base font-bold uppercase tracking-widest",
+    };
 
-        return (
-            <motion.button
-                ref={ref}
-                {...animationProps}
-                className={classes}
-                {...props}
-            >
-                {children}
-            </motion.button>
-        );
+    const classes = cn(
+      "inline-flex items-center justify-center transition-all duration-300 \
+      focus:outline-none disabled:opacity-50 disabled:pointer-events-none \
+      group",
+      variants[variant],
+      sizes[size],
+      fullWidth && "w-full",
+      className
+    );
+
+    const animationProps = {
+      whileHover: { scale: 1.04, y: -3 },
+      whileTap: { scale: 0.96 },
+      transition: { type: "spring", stiffness: 420, damping: 18 } as const,
+    };
+
+    const ButtonContent = (
+      <>
+        {/* Neon Ring */}
+        <span className="absolute inset-0 rounded-xl ring-1 ring-white/20 group-hover:ring-neon-magenta/70 transition-all duration-300" />
+
+        {/* Inner Glow */}
+        <span className="absolute inset-0 rounded-xl bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+        {/* Shimmer */}
+        {variant === "primary" && (
+          <span className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.2s_linear] bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+        )}
+
+        <span className="relative z-10">{children}</span>
+      </>
+    );
+
+    if (href) {
+      return (
+        <Link href={href} className={fullWidth ? "w-full" : ""}>
+          <motion.button {...animationProps} className={classes} {...(props as any)}>
+            {ButtonContent}
+          </motion.button>
+        </Link>
+      );
     }
+
+    return (
+      <motion.button ref={ref} {...animationProps} className={classes} {...props}>
+        {ButtonContent}
+      </motion.button>
+    );
+  }
 );
 
 Button.displayName = "Button";

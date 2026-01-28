@@ -110,7 +110,7 @@ const Hero = () => {
                 transition={{ delay: 1.5, duration: 1 }}
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
             >
-                <span className="text-[10px] uppercase tracking-widest text-text-muted font-mono">sys.scroll()</span>
+                {/* <span className="text-[10px] uppercase tracking-widest text-text-muted font-mono">sys.scroll()</span> */}
                 <div className="w-[1px] h-12 bg-gradient-to-b from-soft-lavender to-transparent"></div>
             </motion.div>
         </div>

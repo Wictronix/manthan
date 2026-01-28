@@ -42,9 +42,9 @@ const CountdownTimer = () => {
     return (
         <Section background="default" pattern="dot" mask="radial" className="border-y border-white/5 relative">
             <div className="text-center relative z-10">
-                <h3 className="text-sm font-mono text-soft-lavender mb-12 tracking-widest uppercase opacity-80">
-                    [ T-MINUS TO INTERFACE ]
-                </h3>
+                <h2 className="text-sm font-mono text-soft-lavender mb-12 tracking-widest uppercase opacity-80">
+                    [ TIME TO GO ]
+                </h2>
                 {mounted ? <Countdown date={targetDate} renderer={renderer} /> : (
                     <div className="flex flex-wrap justify-center gap-4 md:gap-12 opacity-50">
                         <TimeBox value={0} label="DAYS" />
