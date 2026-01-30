@@ -1,80 +1,156 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Countdown from "react-countdown";
-import { Section } from "@/components/ui/Section";
 
 interface RendererProps {
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
-    completed: boolean;
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  completed: boolean;
 }
 
-const CountdownTimer = () => {
-    const [mounted, setMounted] = useState(false);
-    const targetDate = new Date("2026-02-12T00:00:00");
+export default function CountdownTimer() {
+  const [mounted, setMounted] = useState(false);
+  const targetDate = new Date("2026-02-12T00:00:00");
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+  useEffect(() => setMounted(true), []);
 
-    const renderer = ({ days, hours, minutes, seconds, completed }: RendererProps) => {
-        if (completed) {
-            return (
-                <div className="text-center text-4xl md:text-6xl font-bold text-neon-magenta animate-pulse drop-shadow-[0_0_20px_rgba(236, 72, 153, 0.4)] font-mono">
-                    CORE_SYSTEM_ACTIVE
-                </div>
-            );
-        }
-
-        return (
-            <div className="flex flex-wrap justify-center gap-4 md:gap-12">
-                <TimeBox value={days} label="DAYS" />
-                <TimeBox value={hours} label="HRS" />
-                <TimeBox value={minutes} label="MIN" />
-                <TimeBox value={seconds} label="SEC" />
-            </div>
-        );
-    };
+  const renderer = ({ days, hours, minutes, seconds, completed }: RendererProps) => {
+    if (completed) {
+      return (
+        <div className="text-4xl md:text-6xl font-bold text-neon animate-pulse">
+          CORE_SYSTEM_ACTIVE
+        </div>
+      );
+    }
 
     return (
-        <Section background="default" pattern="dot" mask="radial" className="border-y border-white/5 relative">
-            <div className="text-center relative z-10">
-                <h2 className="text-sm font-mono text-soft-lavender mb-12 tracking-widest uppercase opacity-80">
-                    [ TIME TO GO ]
-                </h2>
-                {mounted ? <Countdown date={targetDate} renderer={renderer} /> : (
-                    <div className="flex flex-wrap justify-center gap-4 md:gap-12 opacity-50">
-                        <TimeBox value={0} label="DAYS" />
-                        <TimeBox value={0} label="HRS" />
-                        <TimeBox value={0} label="MIN" />
-                        <TimeBox value={0} label="SEC" />
-                    </div>
-                )}
-            </div>
-        </Section>
+      <div className="flex gap-6 md:gap-10">
+        <FlipCell value={days} label="Days" />
+        <FlipCell value={hours} label="Hours" />
+        <FlipCell value={minutes} label="Minutes" />
+        <FlipCell value={seconds} label="Seconds" />
+      </div>
     );
-};
+  };
 
-const TimeBox = ({ value, label }: { value: number; label: string }) => (
-    <div className="flex flex-col items-center group">
-        <div className="relative bg-secondary-surface border border-white/10 rounded-sm p-4 md:p-8 min-w-[100px] md:min-w-[160px] shadow-[0_0_30px_rgba(0,0,0,0.5)] group-hover:border-neon-magenta/50 transition-colors duration-500">
-            {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-neon-magenta opacity-50"></div>
-            <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-neon-magenta opacity-50"></div>
-            <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-neon-magenta opacity-50"></div>
-            <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-neon-magenta opacity-50"></div>
+  return (
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#05070c] via-[#0b1220] to-[#12091f] px-4">
+      <div className="glass-card">
+        <h2 className="heading">STARTS IN </h2>
 
-            <span className="text-5xl md:text-8xl font-bold font-mono tabular-nums text-white group-hover:text-neon-magenta group-hover:drop-shadow-[0_0_15px_rgba(236,72,153,0.8)] transition-all duration-300">
-                {value < 10 ? `0${value}` : value}
-            </span>
+        {mounted ? (
+          <Countdown date={targetDate} renderer={renderer} />
+        ) : (
+          <div className="flex gap-6 md:gap-10 opacity-40">
+            <FlipCell value={0} label="Days" />
+            <FlipCell value={0} label="Hours" />
+            <FlipCell value={0} label="Minutes" />
+            <FlipCell value={0} label="Seconds" />
+          </div>
+        )}
+      </div>
+
+      {/* GLOBAL STYLES */}
+      <style jsx global>{`
+        .glass-card {
+          backdrop-filter: blur(18px);
+          background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.12),
+            rgba(255, 255, 255, 0.04)
+          );
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          border-radius: 20px;
+          padding: 3rem 4rem;
+          box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+          text-align: center;
+        }
+
+        .heading {
+          color: #ffffff;
+          font-size: 1.5rem;
+          margin-bottom: 2.5rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          opacity: 0.85;
+        }
+
+        .neon {
+          color: #ff4ecd;
+          text-shadow:
+            0 0 10px rgba(255, 78, 205, 0.8),
+            0 0 25px rgba(255, 78, 205, 0.6);
+        }
+
+        .flip-wrapper {
+          perspective: 1000px;
+        }
+
+        .flip-card {
+          background: rgba(20, 20, 30, 0.9);
+          border: 1px solid rgba(255, 78, 205, 0.3);
+          border-radius: 12px;
+          padding: 1.5rem 1.75rem;
+          min-width: 90px;
+          text-align: center;
+          transform-style: preserve-3d;
+          animation: flip 0.6s ease-in-out;
+          box-shadow:
+            0 0 15px rgba(255, 78, 205, 0.15),
+            inset 0 0 20px rgba(0, 0, 0, 0.6);
+          transition: box-shadow 0.4s, border-color 0.4s;
+        }
+
+        .flip-wrapper:hover .flip-card {
+          border-color: rgba(255, 78, 205, 0.9);
+          box-shadow:
+            0 0 25px rgba(255, 78, 205, 0.9),
+            0 0 60px rgba(255, 78, 205, 0.5);
+        }
+
+        .flip-value {
+          font-size: 3rem;
+          font-weight: 700;
+          color: white;
+          font-variant-numeric: tabular-nums;
+          text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+        }
+
+        .flip-label {
+          margin-top: 0.75rem;
+          font-size: 0.7rem;
+          letter-spacing: 0.3em;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.6);
+        }
+
+        @keyframes flip {
+          0% {
+            transform: rotateX(90deg);
+            opacity: 0;
+          }
+          100% {
+            transform: rotateX(0deg);
+            opacity: 1;
+          }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+const FlipCell = ({ value, label }: { value: number; label: string }) => {
+  return (
+    <div className="flip-wrapper">
+      <div key={value} className="flip-card">
+        <div className="flip-value">
+          {value < 10 ? `0${value}` : value}
         </div>
-        <span className="mt-4 text-[10px] font-bold font-mono text-text-muted group-hover:text-soft-lavender transition-colors tracking-widest uppercase">
-      //{label}
-        </span>
+      </div>
+      <div className="flip-label">{label}</div>
     </div>
-);
-
-export { CountdownTimer };
+  );
+};

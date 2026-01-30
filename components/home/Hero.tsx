@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/Button";
 import { motion, useScroll, useTransform } from "framer-motion";
+import MagneticButton from "@/components/ui/MagneticButton";
 import { useRef } from "react";
 
 const Hero = () => {
@@ -90,9 +91,10 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 1 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
-                    <Button size="lg" variant="primary" href="/events">
+                    <MagneticButton href="/events">
                         Register Now
-                    </Button>
+                    </MagneticButton>
+
                     <Button size="lg" variant="outline" href="/about">
                         Learn More
                     </Button>

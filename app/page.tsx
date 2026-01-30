@@ -1,5 +1,5 @@
 import { Hero } from "@/components/home/Hero";
-import { CountdownTimer } from "@/components/home/Countdown";
+import CountdownTimer from "@/components/home/Countdown";
 import { AboutPreview } from "@/components/home/AboutPreview";
 import { EventCategories } from "@/components/home/EventCategories";
 import { SpotlightEvents } from "@/components/home/SpotlightEvents";
