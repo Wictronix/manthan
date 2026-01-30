@@ -42,7 +42,7 @@ const AboutPreview = () => {
 
                     <div className="mt-8 flex gap-4">
                         <Button variant="secondary" href="/about">
-                            Explore Protocol
+                            Read More
                         </Button>
                     </div>
                 </div>

@@ -28,7 +28,7 @@ const Hero = () => {
             >
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.1] grayscale"
-                    style={{ backgroundImage: 'url(https://placehold.co/1920x1080/0a0a0a/EC4899?text=Manthan+Cyber+Vision)' }}
+                    style={{ backgroundImage: 'url(https://placehold.co/1920x1080/0a0a0a/EC4899?text=Manthan+Cultural)' }}
                 />
                 {/* Pattern Layer */}
                 <div className="absolute inset-0 bg-grid opacity-[0.05] mask-radial-fade" />
@@ -41,9 +41,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-primary-bg/50 via-transparent to-primary-bg" />
             </motion.div>
 
-            {/* Floating Elements (Cyber/Tech Deco) */}
-            <div className="absolute top-1/4 left-10 w-24 h-24 border border-grad-mid/20 rounded-full animate-[spin_10s_linear_infinite]" />
-            <div className="absolute bottom-1/4 right-10 w-32 h-32 border border-neon-magenta/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+
 
             <div className="relative z-10 px-4 max-w-6xl mx-auto">
                 <motion.div
@@ -52,7 +50,7 @@ const Hero = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="mb-6"
                 >
-                    <span className="inline-block py-1 px-4 rounded-full border border-white/5 bg-white/5 backdrop-blur-md text-xs md:text-sm font-medium text-soft-lavender tracking-widest uppercase">
+                    <span className="inline-block py-1 px-4 rounded-full border border-white/5 bg-white/5 backdrop-blur-md text-xs md:text-sm font-medium text-soft-lavender tracking-widest">
                         Tata Institute of Social Sciences Presents
                     </span>
                 </motion.div>
@@ -72,7 +70,7 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-2xl md:text-4xl font-light mb-10 text-soft-lavender tracking-widest uppercase opacity-80"
+                    className="text-2xl md:text-4xl font-light mb-10 text-soft-lavender tracking-widest opacity-80"
                 >
                     Dare<span className="text-white/10 mx-4">/</span>Dream<span className="text-white/10 mx-4">/</span>Discover
                 </motion.p>
@@ -83,9 +81,7 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="text-sm md:text-base text-text-muted font-mono mb-12 flex items-center justify-center gap-4"
                 >
-                    <span className="text-neon-magenta opacity-50">&#60;</span>
                     February 12–13, 2026
-                    <span className="text-neon-magenta opacity-50">/&#62;</span>
                 </motion.div>
 
                 <motion.div
@@ -98,7 +94,7 @@ const Hero = () => {
                         Register Now
                     </Button>
                     <Button size="lg" variant="outline" href="/about">
-                        Explore Domain
+                        Learn More
                     </Button>
                 </motion.div>
             </div>
@@ -110,7 +106,7 @@ const Hero = () => {
                 transition={{ delay: 1.5, duration: 1 }}
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
             >
-                {/* <span className="text-[10px] uppercase tracking-widest text-text-muted font-mono">sys.scroll()</span> */}
+
                 <div className="w-[1px] h-12 bg-gradient-to-b from-soft-lavender to-transparent"></div>
             </motion.div>
         </div>

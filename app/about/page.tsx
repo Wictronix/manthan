@@ -22,10 +22,10 @@ export default function AboutPage() {
                         transition={{ duration: 0.8 }}
                         className="text-5xl md:text-7xl font-bold font-poppins text-white mb-6 tracking-tight"
                     >
-                        The <span className="text-transparent bg-clip-text bg-gradient-to-r from-grad-start via-grad-mid to-grad-end drop-shadow-[0_0_15px_rgba(124,58,237,0.3)]">Mandate</span>
+                        About <span className="text-transparent bg-clip-text bg-gradient-to-r from-grad-start via-grad-mid to-grad-end drop-shadow-[0_0_15px_rgba(124,58,237,0.3)]">Manthan</span>
                     </motion.h1>
                     <p className="text-soft-lavender text-lg md:text-xl font-light leading-relaxed opacity-80 uppercase tracking-widest">
-             // Academic Excellence since 1936
+                        Academic Excellence since 1936
                     </p>
                 </div>
             </div>
@@ -37,7 +37,7 @@ export default function AboutPage() {
                     {/* About TISS */}
                     <div className="space-y-8">
                         <h2 className="text-3xl font-bold font-poppins text-soft-lavender flex items-center gap-3">
-                            <span className="text-neon-magenta opacity-50">//</span> TISS Mumbai
+                            <span className="text-neon-magenta opacity-50">/</span> TISS Mumbai
                         </h2>
                         <div className="text-text-secondary leading-relaxed text-lg font-light space-y-6">
                             <p>
@@ -56,7 +56,7 @@ export default function AboutPage() {
                     <div className="space-y-8 p-12 rounded-2xl bg-secondary-surface/30 border border-white/5 relative overflow-hidden backdrop-blur-md">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-grad-mid/5 blur-[100px] -z-10" />
                         <h2 className="text-3xl font-bold font-poppins text-neon-magenta flex items-center gap-3">
-                            <span className="text-white opacity-20">//</span> Manthan
+                            <span className="text-white opacity-20">/</span> Manthan
                         </h2>
                         <div className="text-text-secondary leading-relaxed text-lg font-light space-y-6">
                             <p>

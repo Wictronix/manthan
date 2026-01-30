@@ -36,10 +36,7 @@ export default function GalleryPage() {
             >
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-grad-start/5 blur-[120px] pointer-events-none -z-10" />
                 <h1 className="text-5xl md:text-7xl font-bold font-poppins text-white mb-4 tracking-tighter">
-                    Visual{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-grad-start via-grad-mid to-grad-end drop-shadow-[0_0_15px_rgba(236,72,153,0.3)]">
-                        Archives
-                    </span>
+                    Gallery
                 </h1>
                 <p className="text-text-muted text-lg max-w-2xl mx-auto font-light">
                     Relive the moments that made history at Manthan.

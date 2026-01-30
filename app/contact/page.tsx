@@ -16,7 +16,7 @@ export default function ContactPage() {
 
     const handleFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        alert("Transmission Received. Status: Acknowledged.");
+        alert("Message sent successfully!");
     };
 
     return (
@@ -24,10 +24,10 @@ export default function ContactPage() {
             <Section background="default" pattern="grid" mask="radial" className="pt-32 pb-10 text-center relative overflow-hidden">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-grad-mid/5 blur-[120px] pointer-events-none -z-10" />
                 <h1 className="text-5xl md:text-7xl font-bold font-poppins text-white mb-4 tracking-tighter">
-                    Establish <span className="text-transparent bg-clip-text bg-gradient-to-r from-grad-start via-grad-mid to-grad-end drop-shadow-[0_0_15px_rgba(124,58,237,0.3)]">Interface</span>
+                    Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-grad-start via-grad-mid to-grad-end drop-shadow-[0_0_15px_rgba(124,58,237,0.3)]">Us</span>
                 </h1>
                 <p className="text-text-muted text-lg max-w-2xl mx-auto font-light">
-                    Channels are open. Awaiting telemetry.
+                    We'd love to hear from you. Reach out for any queries.
                 </p>
             </Section>
 
@@ -36,29 +36,29 @@ export default function ContactPage() {
                     {/* Contact Form */}
                     <div className="relative z-10">
                         <h2 className="text-xl font-bold font-poppins text-white mb-10 border-l-2 border-neon-magenta pl-4 tracking-widest uppercase">
-                            Request_Access
+                            Get in Touch
                         </h2>
                         <form onSubmit={handleFormSubmit} className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Identity.mask</label>
-                                    <input type="text" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="COMMANDER_X" />
+                                    <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Full Name</label>
+                                    <input type="text" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="John Doe" />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Comms.node</label>
+                                    <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Phone Number</label>
                                     <input type="tel" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="+91 XXXX XXXX" />
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Auth.e-mail</label>
-                                <input type="email" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="user@interface.net" />
+                                <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Email Address</label>
+                                <input type="email" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="user@example.com" />
                             </div>
                             <div className="space-y-2">
-                                <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Message.packet</label>
-                                <textarea required rows={5} className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="Enter transmission details..."></textarea>
+                                <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Message</label>
+                                <textarea required rows={5} className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="How can we help you?"></textarea>
                             </div>
                             <Button type="submit" variant="primary" size="lg" fullWidth>
-                                EXEC_SEND
+                                Send Message
                             </Button>
                         </form>
                     </div>
@@ -66,7 +66,7 @@ export default function ContactPage() {
                     {/* FAQ */}
                     <div className="relative z-10">
                         <h2 className="text-xl font-bold font-poppins text-white mb-10 border-l-2 border-grad-end pl-4 tracking-widest uppercase">
-                            System_Log (FAQ)
+                            Frequently Asked Questions
                         </h2>
                         <div className="space-y-4">
                             {FAQS.map((faq) => (
@@ -94,7 +94,7 @@ export default function ContactPage() {
             <Section background="default" pattern="grid" mask="linear" showOrbs orbColor="primary" className="py-24 border-t border-white/5 relative">
                 <div className="absolute inset-0 bg-grad-mid/5 mix-blend-overlay pointer-events-none"></div>
                 <h2 className="text-3xl font-bold font-poppins text-white mb-16 text-center tracking-tight">
-                    Nodes <span className="text-soft-lavender">&</span> Operators
+                    Team <span className="text-soft-lavender">&</span> Heads
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
                     {TEAM.map((member) => (

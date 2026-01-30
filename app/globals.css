@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Futuristic Neon Palette */
+  /* Cultural Theme Palette */
   --color-primary-bg: #0B0A1A;
   --color-secondary-surface: #1A0F2E;
   --color-elevated-section: #2A0E3F;

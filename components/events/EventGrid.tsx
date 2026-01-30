@@ -45,9 +45,9 @@ const EventGridContent = () => {
                         <button
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
-                            className={`px-5 py-2 rounded-sm text-sm font-bold uppercase tracking-wider transition-all duration-300 relative overflow-hidden group ${activeCategory.toLowerCase() === cat.toLowerCase()
-                                    ? "text-dark-bg bg-primary-blue shadow-[0_0_15px_rgba(0,240,255,0.4)]"
-                                    : "text-gray-400 bg-white/5 hover:text-white hover:bg-white/10 border border-white/5"
+                            className={`px-5 py-2 rounded-sm text-sm font-bold tracking-wider transition-all duration-300 relative overflow-hidden group ${activeCategory.toLowerCase() === cat.toLowerCase()
+                                ? "text-dark-bg bg-primary-blue shadow-[0_0_15px_rgba(0,240,255,0.4)]"
+                                : "text-gray-400 bg-white/5 hover:text-white hover:bg-white/10 border border-white/5"
                                 }`}
                         >
                             <span className="relative z-10">{cat}</span>
@@ -60,7 +60,7 @@ const EventGridContent = () => {
                     <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 group-focus-within:text-primary-blue transition-colors" />
                     <input
                         type="text"
-                        placeholder="SEARCH_EVENTS..."
+                        placeholder="Search events..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         className="w-full pl-12 pr-4 py-3 rounded-sm bg-dark-bg border border-white/10 text-white placeholder-gray-600 focus:outline-none focus:border-primary-blue focus:shadow-[0_0_15px_rgba(0,240,255,0.1)] transition-all font-mono text-sm"
@@ -81,12 +81,12 @@ const EventGridContent = () => {
                     animate={{ opacity: 1 }}
                     className="text-center py-32 border border-dashed border-white/10 rounded-2xl bg-white/5"
                 >
-                    <p className="text-gray-500 text-lg font-mono mb-4">NO_DATA_FOUND</p>
+                    <p className="text-gray-500 text-lg font-mono mb-4">No events found</p>
                     <Button
                         variant="outline"
                         onClick={() => { setActiveCategory("All"); setSearchQuery(""); }}
                     >
-                        Reset System
+                        Reset Filters
                     </Button>
                 </motion.div>
             )}
@@ -96,7 +96,7 @@ const EventGridContent = () => {
 
 const EventGrid = () => {
     return (
-        <Suspense fallback={<div className="py-20 text-center text-primary-blue animate-pulse font-mono">LOADING_SYSTEM_DATA...</div>}>
+        <Suspense fallback={<div className="py-20 text-center text-primary-blue animate-pulse font-mono">Loading events...</div>}>
             <EventGridContent />
         </Suspense>
     )

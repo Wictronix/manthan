@@ -61,7 +61,7 @@ const SpotlightEvents = () => {
 
                             <div className="relative z-10">
                                 <span className="inline-block px-4 py-1 rounded-sm border border-neon-magenta/20 bg-neon-magenta/10 text-neon-magenta text-[10px] font-bold uppercase tracking-widest mb-6 font-mono">
-                                    PROTOCOL_STATE: {event.category} // S-0{event.id}
+                                    {event.category}
                                 </span>
                                 <h3 className="text-4xl md:text-5xl font-bold font-poppins text-white mb-4 group-hover:text-neon-magenta transition-colors tracking-tight">
                                     {event.title}
@@ -72,10 +72,10 @@ const SpotlightEvents = () => {
 
                                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 border-t border-white/5 pt-8">
                                     <Button href={`/events/${event.slug}`} variant="primary">
-                                        Initiate Command
+                                        View Details
                                     </Button>
                                     <div className="flex flex-col">
-                                        <span className="text-[10px] text-text-muted font-mono uppercase tracking-[0.2em]">Est_Bounty</span>
+                                        <span className="text-[10px] text-text-muted font-mono uppercase tracking-[0.2em]">Prize Pool</span>
                                         <span className="text-2xl font-bold text-white shadow-glow">{event.prizePool}</span>
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@ const SpotlightEvents = () => {
 
             <div className="mt-16 text-center">
                 <Button href="/events" variant="ghost" size="lg" className="hover:text-soft-lavender">
-                    // EXEC_ALL_DOMAINS
+                    View All Events
                 </Button>
             </div>
         </Section>

@@ -21,14 +21,13 @@ export default function EventsPage() {
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-grad-mid/5 blur-[120px] pointer-events-none -z-10" />
 
                 <h1 className="text-5xl md:text-7xl font-bold font-poppins text-white mb-6 tracking-tighter">
-                    Event{" "}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-grad-start via-grad-mid to-grad-end drop-shadow-[0_0_15px_rgba(124,58,237,0.3)]">
-                        Registry
+                        Events
                     </span>
                 </h1>
 
                 <p className="text-text-muted text-lg max-w-2xl mx-auto font-light leading-relaxed">
-                    [ ACCESSING_EVENT_DATABASES... SELECT_REQUIRED_MODULE ]
+                    Participate, Compete, and Celebrate.
                 </p>
 
                 {/* Floating Glow Orbs */}

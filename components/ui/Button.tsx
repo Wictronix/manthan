@@ -63,9 +63,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     const sizes = {
-      sm: "px-4 py-2 text-xs uppercase tracking-wider",
-      md: "px-6 py-3 text-sm uppercase tracking-wider",
-      lg: "px-8 py-4 text-base font-bold uppercase tracking-widest",
+      sm: "px-4 py-2 text-xs tracking-wider",
+      md: "px-6 py-3 text-sm tracking-wider",
+      lg: "px-8 py-4 text-base font-bold tracking-widest",
     };
 
     const classes = cn(

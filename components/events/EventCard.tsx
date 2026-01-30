@@ -17,7 +17,7 @@ const EventCard = ({ event, index = 0 }: EventCardProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
-            className="group relative bg-secondary-surface/80 backdrop-blur-md rounded-2xl overflow-hidden border border-white/5 hover:border-neon-magenta/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.15)] flex flex-col h-full"
+            className="group relative bg-[#1A0F2E] rounded-2xl overflow-hidden border border-white/10 hover:border-neon-magenta/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(236,72,153,0.15)] flex flex-col h-full"
         >
             {/* Neon Glow Line on Hover */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-grad-start via-grad-mid to-grad-end transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20" />
@@ -45,11 +45,11 @@ const EventCard = ({ event, index = 0 }: EventCardProps) => {
 
                 <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
                     <div className="flex flex-col">
-                        <span className="text-[10px] text-text-muted uppercase tracking-widest">Prize</span>
+                        <span className="text-[10px] text-text-muted tracking-wider">Prize</span>
                         <span className="text-sm font-bold text-text-primary">{event.prizePool}</span>
                     </div>
                     <Button href={`/events/${event.slug}`} variant="secondary" size="sm" className="text-xs px-4 py-2">
-                        Details
+                        View Details
                     </Button>
                 </div>
             </div>

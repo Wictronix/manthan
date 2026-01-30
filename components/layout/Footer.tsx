@@ -70,7 +70,7 @@ const Footer = () => {
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-60">
                     <p>© 2026 Manthan TISS. All rights reserved.</p>
-                    <p className="font-mono tracking-tighter uppercase opacity-50">MANTHAN_V3.0 // CYBER_CORE</p>
+                    <p className="tracking-tighter opacity-50">Designed with ❤️ by Tech Team</p>
                 </div>
             </div>
         </footer>

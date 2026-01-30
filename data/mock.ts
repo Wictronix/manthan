@@ -56,7 +56,7 @@ export const EVENTS: Event[] = [
         fullDescription: 'Dakshya tests your analytical and data-driven decision-making skills in a high-pressure environment. Use AI and data analytics to solve complex development problems.',
         date: 'February 13, 2026',
         time: '11:00 AM',
-        venue: 'Tech Corridor',
+        venue: 'Main Courtyard',
         image: '/images/02_FLAGSHIP_EVENTS/Dakshya.jpg',
         rules: [
             'Laptops are required.',
@@ -98,9 +98,9 @@ export const EVENTS: Event[] = [
 export const SPONSORS: Sponsor[] = [
     {
         id: '1',
-        name: 'TechCorp',
+        name: 'Heritage Foundation',
         tier: 'Platinum',
-        logo: 'https://placehold.co/400x200?text=TechCorp'
+        logo: 'https://placehold.co/400x200?text=Heritage+Foundation'
     },
     {
         id: '2',
