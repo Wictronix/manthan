@@ -17,17 +17,23 @@ export default function CountdownTimer() {
 
   useEffect(() => setMounted(true), []);
 
-  const renderer = ({ days, hours, minutes, seconds, completed }: RendererProps) => {
+  const renderer = ({
+    days,
+    hours,
+    minutes,
+    seconds,
+    completed,
+  }: RendererProps) => {
     if (completed) {
       return (
-        <div className="text-4xl md:text-6xl font-bold text-neon animate-pulse">
+        <div className="core-active">
           CORE_SYSTEM_ACTIVE
         </div>
       );
     }
 
     return (
-      <div className="flex gap-6 md:gap-10">
+      <div className="countdown-row">
         <FlipCell value={days} label="Days" />
         <FlipCell value={hours} label="Hours" />
         <FlipCell value={minutes} label="Minutes" />
@@ -37,14 +43,14 @@ export default function CountdownTimer() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#05070c] via-[#0b1220] to-[#12091f] px-4">
+    <section className="countdown-section">
       <div className="glass-card">
-        <h2 className="heading">STARTS IN </h2>
+        <h2 className="heading">STARTS IN</h2>
 
         {mounted ? (
           <Countdown date={targetDate} renderer={renderer} />
         ) : (
-          <div className="flex gap-6 md:gap-10 opacity-40">
+          <div className="countdown-row opacity">
             <FlipCell value={0} label="Days" />
             <FlipCell value={0} label="Hours" />
             <FlipCell value={0} label="Minutes" />
@@ -53,9 +59,40 @@ export default function CountdownTimer() {
         )}
       </div>
 
-      {/* GLOBAL STYLES */}
+      {/* GLOBAL + COMPONENT STYLES */}
       <style jsx global>{`
+        /* ===== HARD STOP SCROLL FIX ===== */
+        html,
+        body {
+          width: 100%;
+          overflow-x: hidden;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        /* ===== SECTION ===== */
+        .countdown-section {
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+          background: linear-gradient(
+            135deg,
+            #05070c,
+            #0b1220,
+            #12091f
+          );
+        }
+
+        /* ===== CARD ===== */
         .glass-card {
+          max-width: 100%;
+          padding: 3rem 3.5rem;
+          border-radius: 20px;
+          text-align: center;
           backdrop-filter: blur(18px);
           background: linear-gradient(
             135deg,
@@ -63,94 +100,143 @@ export default function CountdownTimer() {
             rgba(255, 255, 255, 0.04)
           );
           border: 1px solid rgba(255, 255, 255, 0.18);
-          border-radius: 20px;
-          padding: 3rem 4rem;
           box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
-          text-align: center;
+          overflow: hidden;
         }
 
+        /* ===== HEADING ===== */
         .heading {
-          color: #ffffff;
-          font-size: 1.5rem;
+          color: #fff;
+          font-size: 1.4rem;
           margin-bottom: 2.5rem;
-          letter-spacing: 0.12em;
+          letter-spacing: 0.14em;
           text-transform: uppercase;
           opacity: 0.85;
         }
 
-        .neon {
-          color: #ff4ecd;
-          text-shadow:
-            0 0 10px rgba(255, 78, 205, 0.8),
-            0 0 25px rgba(255, 78, 205, 0.6);
+        /* ===== COUNTDOWN ROW ===== */
+        .countdown-row {
+          display: flex;
+          justify-content: center;
+          gap: 1.5rem;
+          flex-wrap: wrap;
+          overflow: hidden;
         }
 
+        /* ===== FLIP CELL ===== */
         .flip-wrapper {
           perspective: 1000px;
+          width: 72px;
         }
 
         .flip-card {
           background: rgba(20, 20, 30, 0.9);
-          border: 1px solid rgba(255, 78, 205, 0.3);
+          border: 1px solid rgba(255, 78, 205, 0.35);
           border-radius: 12px;
-          padding: 1.5rem 1.75rem;
-          min-width: 90px;
+          padding: 1rem 0;
           text-align: center;
-          transform-style: preserve-3d;
-          animation: flip 0.6s ease-in-out;
+          animation: flip 0.6s ease;
           box-shadow:
-            0 0 15px rgba(255, 78, 205, 0.15),
-            inset 0 0 20px rgba(0, 0, 0, 0.6);
-          transition: box-shadow 0.4s, border-color 0.4s;
+            0 0 18px rgba(255, 78, 205, 0.15),
+            inset 0 0 18px rgba(0, 0, 0, 0.6);
         }
 
         .flip-wrapper:hover .flip-card {
           border-color: rgba(255, 78, 205, 0.9);
           box-shadow:
-            0 0 25px rgba(255, 78, 205, 0.9),
-            0 0 60px rgba(255, 78, 205, 0.5);
+            0 0 30px rgba(255, 78, 205, 0.9),
+            0 0 70px rgba(255, 78, 205, 0.45);
         }
 
         .flip-value {
-          font-size: 3rem;
+          font-size: 2rem;
           font-weight: 700;
-          color: white;
+          color: #fff;
           font-variant-numeric: tabular-nums;
           text-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
         }
 
         .flip-label {
-          margin-top: 0.75rem;
-          font-size: 0.7rem;
-          letter-spacing: 0.3em;
+          margin-top: 0.45rem;
+          font-size: 0.6rem;
+          letter-spacing: 0.25em;
           text-transform: uppercase;
           color: rgba(255, 255, 255, 0.6);
         }
 
+        /* ===== CORE ACTIVE ===== */
+        .core-active {
+          font-size: 3rem;
+          font-weight: 800;
+          color: #ff4ecd;
+          text-shadow:
+            0 0 15px rgba(255, 78, 205, 0.9),
+            0 0 40px rgba(255, 78, 205, 0.6);
+          animation: pulse 1.4s infinite;
+        }
+
+        /* ===== ANIMATIONS ===== */
         @keyframes flip {
-          0% {
+          from {
             transform: rotateX(90deg);
             opacity: 0;
           }
-          100% {
-            transform: rotateX(0deg);
+          to {
+            transform: rotateX(0);
             opacity: 1;
           }
+        }
+
+        @keyframes pulse {
+          0% {
+            opacity: 0.7;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0.7;
+          }
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 640px) {
+          .glass-card {
+            padding: 2rem;
+          }
+
+          .flip-wrapper {
+            width: 58px;
+          }
+
+          .flip-value {
+            font-size: 1.5rem;
+          }
+
+          .flip-label {
+            font-size: 0.5rem;
+          }
+
+          .countdown-row {
+            gap: 1rem;
+          }
+        }
+
+        .opacity {
+          opacity: 0.4;
         }
       `}</style>
     </section>
   );
 }
 
-const FlipCell = ({ value, label }: { value: number; label: string }) => {
-  return (
-    <div className="flip-wrapper">
-      <div key={value} className="flip-card">
-        <div className="flip-value">
-          {value < 10 ? `0${value}` : value}
-        </div>
+const FlipCell = ({ value, label }: { value: number; label: string }) => (
+  <div className="flip-wrapper">
+    <div key={value} className="flip-card">
+      <div className="flip-value">
+        {value < 10 ? `0${value}` : value}
       </div>
-      <div className="flip-label">{label}</div>
     </div>
-  );
-};
+    <div className="flip-label">{label}</div>
+  </div>
+);

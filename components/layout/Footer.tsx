@@ -177,7 +177,7 @@ const Footer = () => {
 
                     {/* Right */}
                     <p className="order-3 tracking-tighter opacity-50">
-                        Designed with ❤️ by Tech Team
+                        Designed by Tech Team
                     </p>
                 </div>
             </div>
