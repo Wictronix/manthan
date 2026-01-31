@@ -2,98 +2,156 @@ import { Event, Faq, Sponsor, TeamMember } from "@/types";
 
 export const EVENTS: Event[] = [
     {
-        id: '1',
-        slug: 'tattvabodha',
-        title: 'Tattvabodha',
-        category: 'Flagship',
-        shortDescription: 'Idea Conclave: Churning of ideas and social transformation.',
-        fullDescription: 'Tattvabodha is the intellectual soul of Manthan. It is an idea conclave that brings together visionary leaders, social innovators, and students to discuss and debate the most pressing challenges of our time.',
-        date: 'February 12, 2026',
-        time: '10:00 AM',
-        venue: 'Convention Centre',
-        image: '/images/02_FLAGSHIP_EVENTS/Tattvabodha.jpg',
+        id: "1",
+        slug: "tattvabodha",
+        title: "Tattvabodha",
+        category: "Flagship",
+        shortDescription: "Idea conclave focused on dialogue, policy, and social change.",
+        fullDescription:
+            "Tattvabodha is the intellectual forum of Manthan, bringing together thinkers, students, and professionals to discuss contemporary social, economic, and policy challenges.",
+        date: "February 12, 2026",
+        time: "10:00 AM",
+        venue: "Convention Centre",
+        image: "/images/02_FLAGSHIP_EVENTS/Tattvabodha.jpg",
         rules: [
-            'Pre-registration is mandatory.',
-            'Formally dressed is encouraged.',
-            'The session will be followed by a Q&A round.'
+            "Pre-registration is mandatory.",
+            "Formal or semi-formal attire is preferred.",
+            "Interactive discussion and Q&A session included.",
         ],
-        prizePool: 'High Credibility',
+        prizePool: "Certificates & Recognition",
         contactPerson: {
-            name: 'Academic Team',
-            phone: '+91 91234 56789'
+            name: "Academic Team",
+            phone: "+91 91234 56789",
         },
-        registrationLink: '#'
+        registrationLink: "#",
     },
+
     {
-        id: '2',
-        slug: 'consultiss',
-        title: 'ConsultISS',
-        category: 'Flagship',
-        shortDescription: 'National Case Challenge: Solve real-world management problems.',
-        fullDescription: 'ConsultISS is a high-rigor national case study competition where teams from top B-Schools battle it out to provide the most innovative and viable solutions to real-world business and social problems.',
-        date: 'February 12, 2026',
-        time: '11:00 AM',
-        venue: 'Auditorium',
-        image: '/images/02_FLAGSHIP_EVENTS/consultiss.png',
+        id: "2",
+        slug: "consultiss",
+        title: "ConsultISS",
+        category: "Flagship",
+        shortDescription: "National case study competition on real-world challenges.",
+        fullDescription:
+            "ConsultISS is a national-level case study competition where participants analyze real-life management and social problems and present actionable solutions.",
+        date: "February 12, 2026",
+        time: "11:00 AM",
+        venue: "Auditorium",
+        image: "/images/02_FLAGSHIP_EVENTS/consultiss.png",
         rules: [
-            'Teams of 3 members.',
-            'Solutions must be submitted in PDF format.',
-            'Plagiarism will lead to disqualification.'
+            "Team size: 3 members.",
+            "Case submission in PDF format.",
+            "Original work only. Plagiarism is not allowed.",
         ],
-        prizePool: '₹ 50,000',
+        prizePool: "₹50,000",
         contactPerson: {
-            name: 'Management Head',
-            phone: '+91 55555 44444'
+            name: "Management Team",
+            phone: "+91 55555 44444",
         },
-        registrationLink: '#'
+        registrationLink: "#",
     },
+
     {
-        id: '3',
-        slug: 'dakshya',
-        title: 'Dakshya',
-        category: 'Management',
-        shortDescription: 'AI & Analytics Challenge: Decoding data for impact.',
-        fullDescription: 'Dakshya tests your analytical and data-driven decision-making skills in a high-pressure environment. Use AI and data analytics to solve complex development problems.',
-        date: 'February 13, 2026',
-        time: '11:00 AM',
-        venue: 'Main Courtyard',
-        image: '/images/02_FLAGSHIP_EVENTS/Dakshya.jpg',
+        id: "3",
+        slug: "dakshya",
+        title: "Dakshya",
+        category: "Flagship",
+        shortDescription: "Analytics and problem-solving challenge using data.",
+        fullDescription:
+            "Dakshya tests participants on data interpretation, analytical thinking, and practical problem-solving using real datasets and scenarios.",
+        date: "February 13, 2026",
+        time: "11:00 AM",
+        venue: "Main Courtyard",
+        image: "/images/02_FLAGSHIP_EVENTS/Dakshya.jpg",
         rules: [
-            'Laptops are required.',
-            'Basic knowledge of analytics tools is mandatory.',
-            'Open to all postgraduate students.'
+            "Participants must bring their own laptops.",
+            "Basic knowledge of analytics is required.",
+            "Open to postgraduate students.",
         ],
-        prizePool: '₹ 30,000',
+        prizePool: "₹30,000",
         contactPerson: {
-            name: 'Analytical Team',
-            phone: '+91 77777 66666'
+            name: "Analytics Team",
+            phone: "+91 77777 66666",
         },
-        registrationLink: '#'
+        registrationLink: "#",
     },
+
     {
-        id: '4',
-        slug: 'srijan',
-        title: 'Srijan',
-        category: 'Management',
-        shortDescription: 'HR Strategy Challenge: Building and managing high-impact teams.',
-        fullDescription: 'Srijan is TISS Mumbai’s premier HR competition, challenging participants on their people management skills, strategic thinking, and ethical leadership.',
-        date: 'February 13, 2026',
-        time: '2:00 PM',
-        venue: 'Seminar Hall',
-        image: '/images/02_FLAGSHIP_EVENTS/Srijan.jpg',
+        id: "4",
+        slug: "srijan",
+        title: "Srijan",
+        category: "Flagship",
+        shortDescription: "Human resource and leadership strategy competition.",
+        fullDescription:
+            "Srijan focuses on people management, leadership decision-making, and ethical problem-solving through interactive and role-based rounds.",
+        date: "February 13, 2026",
+        time: "2:00 PM",
+        venue: "Seminar Hall",
+        image: "/images/02_FLAGSHIP_EVENTS/Srijan.jpg",
         rules: [
-            'Role-play rounds involved.',
-            'Team size: 2 members.',
-            'Judgment based on ethics and creativity.'
+            "Team size: 2 members.",
+            "Role-play and presentation rounds.",
+            "Judging based on ethics and creativity.",
         ],
-        prizePool: '₹ 25,000',
+        prizePool: "₹25,000",
         contactPerson: {
-            name: 'Cultural Secretary',
-            phone: '+91 77777 66666'
+            name: "HR Team",
+            phone: "+91 77777 66666",
         },
-        registrationLink: '#'
-    }
+        registrationLink: "#",
+    },
+
+    {
+        id: "5",
+        slug: "jigyasa",
+        title: "Jigyasa",
+        category: "Flagship",
+        shortDescription: "Quiz competition testing knowledge and awareness.",
+        fullDescription:
+            "Jigyasa is Manthan’s flagship quiz event, challenging participants on current affairs, social issues, culture, and general awareness.",
+        date: "February 12, 2026",
+        time: "3:00 PM",
+        venue: "Lecture Hall",
+        image: "/images/02_FLAGSHIP_EVENTS/Jigyasa.jpg",
+        rules: [
+            "Team size: 2 members.",
+            "Preliminary written round followed by finals.",
+            "Quizmaster’s decision will be final.",
+        ],
+        prizePool: "₹20,000",
+        contactPerson: {
+            name: "Quiz Team",
+            phone: "+91 88888 77777",
+        },
+        registrationLink: "#",
+    },
+
+    {
+        id: "6",
+        slug: "udghosh",
+        title: "Udghosh",
+        category: "Flagship",
+        shortDescription: "Opening ceremony featuring performances and addresses.",
+        fullDescription:
+            "Udghosh marks the grand opening of Manthan, featuring keynote addresses, cultural performances, and the official inauguration of the fest.",
+        date: "February 12, 2026",
+        time: "6:00 PM",
+        venue: "Open Air Theatre",
+        image: "/images/02_FLAGSHIP_EVENTS/Udghosh.jpg",
+        rules: [
+            "Open to all registered participants.",
+            "Entry on a first-come basis.",
+            "Follow campus decorum guidelines.",
+        ],
+        prizePool: "—",
+        contactPerson: {
+            name: "Cultural Committee",
+            phone: "+91 99999 88888",
+        },
+        registrationLink: "#",
+    },
 ];
+
 
 export const SPONSORS: Sponsor[] = [
     {

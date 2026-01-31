@@ -62,10 +62,58 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     className="text-7xl md:text-9xl lg:text-[11rem] font-bold font-poppins mb-2 tracking-tighter leading-none"
                 >
-                    <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-text-secondary to-grad-mid drop-shadow-[0_0_30px_rgba(124,58,237,0.2)]">
-                        MANTHAN
+                    <span className="shine-wrapper">
+                        <span className="shine-text text-transparent bg-clip-text bg-gradient-to-b from-white via-text-secondary to-grad-mid">
+                            MANTHAN
+                        </span>
+
+                        {/* SLOW SWORD SHINE */}
+                        <motion.span
+                            aria-hidden
+                            className="shine-overlay"
+                            initial={{ x: "-160%" }}
+                            animate={{ x: "160%" }}
+                            transition={{
+                                duration: 4.2,
+                                ease: "easeInOut",
+                                repeat: Infinity,
+                                repeatDelay: 5,
+                            }}
+                        />
                     </span>
+
+                    {/* INTERNAL STYLES */}
+                    <style jsx>{`
+    .shine-wrapper {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .shine-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .shine-overlay {
+      position: absolute;
+      inset: 0;
+      width: 160%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent 42%,
+        rgba(255, 255, 255, 0.75) 50%,
+        transparent 58%
+      );
+      filter: blur(2.5px);
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+  `}</style>
                 </motion.h1>
+
+
 
                 <motion.p
                     initial={{ opacity: 0 }}
