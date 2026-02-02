@@ -124,10 +124,10 @@ const Footer = () => {
                                 <FiMail className="mt-1 text-soft-lavender group-hover:text-neon-magenta transition-colors" />
                                 <span>tissforum.manthan2026@gmail.com</span>
                             </li>
-                            <li className="flex items-start gap-3 group cursor-pointer hover:text-white transition-colors">
+                            {/* <li className="flex items-start gap-3 group cursor-pointer hover:text-white transition-colors">
                                 <FiPhone className="mt-1 text-soft-lavender group-hover:text-neon-magenta transition-colors" />
                                 <span>+91 98765 43210</span>
-                            </li>
+                            </li> */}
                             <li className="flex items-start gap-3">
                                 <span className="text-soft-lavender font-bold">
                                     HQ:
