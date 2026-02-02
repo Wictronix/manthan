@@ -111,7 +111,7 @@ export default function AboutPage() {
                     </AnimatePresence>
 
                     {/* ================= TEAM ================= */}
-                    <div className="space-y-16 py-12">
+                    <div id="team" className="space-y-16 py-12">
                         <div className="text-center">
                             <h2 className="text-4xl font-bold text-white">
                                 The <span className="text-soft-lavender">Architects</span>

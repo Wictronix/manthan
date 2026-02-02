@@ -123,14 +123,17 @@ export default function EventDetailsClient({ event }: EventDetailsClientProps) {
 
                             <div className="mt-12 pt-10 border-t border-white/10">
                                 <h4 className="font-bold flex items-center gap-3 mb-6 text-text-muted text-xs uppercase tracking-widest">
-                                    <FiUser /> Contact Person
+                                    <FiUser /> Need Help?
                                 </h4>
-                                <div className="p-5 bg-white/5 rounded-lg border border-white/5">
-                                    <p className="font-bold text-white">{event.contactPerson.name}</p>
-                                    <p className="text-xs text-soft-lavender font-mono mt-2">
-                                        {event.contactPerson.phone}
-                                    </p>
-                                </div>
+                                <Button
+                                    href="/about#team"
+                                    variant="outline"
+                                    fullWidth
+                                    size="sm"
+                                    className="border-white/10 text-soft-lavender hover:text-white"
+                                >
+                                    Contact Team
+                                </Button>
                             </div>
 
                             <div className="mt-10 hidden lg:block">
