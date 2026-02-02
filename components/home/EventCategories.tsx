@@ -7,14 +7,14 @@ import { FiMusic, FiBriefcase, FiFlag, FiActivity } from "react-icons/fi";
 
 const CATEGORIES = [
     {
-        id: "flagship",
-        name: "Flagship",
-        icon: <FiFlag size={32} />,
+        id: "spotlight",
+        name: "Spotlight",
+        icon: <FiActivity size={32} />, // Re-using FiActivity or another icon
         color: "text-neon-magenta",
         borderGlow: "before:shadow-[0_0_60px_rgba(236,72,153,0.5)]",
         hoverGlow: "hover:before:shadow-[0_0_80px_rgba(236,72,153,0.8)]",
-        href: "/events?category=flagship",
-        desc: "THE_MAIN_PROTOCOLS"
+        href: "/events?category=spotlight",
+        desc: "THE_MAIN_ARENA"
     },
     {
         id: "cultural",
@@ -36,16 +36,6 @@ const CATEGORIES = [
         href: "/events?category=management",
         desc: "STRATEGY_DECODING"
     },
-    {
-        id: "sports",
-        name: "Sports",
-        icon: <FiActivity size={32} />,
-        color: "text-grad-start",
-        borderGlow: "before:shadow-[0_0_60px_rgba(76,29,149,0.5)]",
-        hoverGlow: "hover:before:shadow-[0_0_80px_rgba(76,29,149,0.8)]",
-        href: "/events?category=sports",
-        desc: "PHYSICAL_GRID"
-    },
 ];
 
 const EventCategories = () => {
@@ -62,7 +52,7 @@ const EventCategories = () => {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {CATEGORIES.map((cat, index) => (
                     <Link key={cat.id} href={cat.href} className="group relative block h-64">
                         <motion.div

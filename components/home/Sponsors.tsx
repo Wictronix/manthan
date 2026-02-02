@@ -1,72 +1,47 @@
 "use client";
 
 import { Section } from "@/components/ui/Section";
-import { SPONSORS } from "@/data/mock";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Sponsors = () => {
-    const platinum = SPONSORS.filter(s => s.tier === 'Platinum');
-    const gold = SPONSORS.filter(s => s.tier === 'Gold');
-    const silver = SPONSORS.filter(s => s.tier === 'Silver');
-
     return (
-        <Section background="default" pattern="dot" mask="linear" className="py-24 border-t border-white/5">
-            <div className="text-center mb-20">
-                <h2 className="text-2xl md:text-3xl font-bold font-poppins text-text-muted mb-2 uppercase tracking-[0.1em] opacity-80">
-                    Powered By
+        <Section background="default" pattern="grid" mask="linear" showOrbs orbColor="primary" className="py-24 border-t border-white/5">
+            <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold font-poppins text-white mb-4">
+                    Our{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-grad-start to-grad-end">
+                        Sponsors
+                    </span>
                 </h2>
-                <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-grad-mid/50 to-transparent mx-auto"></div>
+                <p className="text-text-muted text-lg max-w-2xl mx-auto font-light">
+                    The pillars of support that make Manthan possible.
+                </p>
             </div>
 
-            <div className="space-y-24">
-                {/* Platinum */}
-                {platinum.length > 0 && (
-                    <div className="text-center">
-                        <h3 className="text-[10px] font-bold text-neon-magenta mb-12 font-mono tracking-[0.3em] uppercase opacity-70">
-               // LEVEL_01: PLATINUM_VECTORS
-                        </h3>
-                        <div className="flex flex-wrap justify-center gap-12 md:gap-24 items-center">
-                            {platinum.map(s => (
-                                <div key={s.id} className="w-48 h-32 relative grayscale hover:grayscale-0 transition-all duration-500 opacity-40 hover:opacity-100 hover:scale-110 cursor-pointer group">
-                                    <div className="absolute inset-0 bg-grad-mid/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full scale-150"></div>
-                                    <Image src={s.logo} alt={s.name} fill className="object-contain relative z-10" />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
+            <div className="max-w-4xl mx-auto px-4">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="relative group overflow-hidden rounded-2xl border border-white/10 bg-secondary-surface/30 backdrop-blur-xl p-12 md:p-20 text-center shadow-2xl"
+                >
+                    {/* Animated background highlights */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-grad-start/5 blur-[100px] pointer-events-none group-hover:bg-grad-start/10 transition-colors duration-700"></div>
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-grad-end/5 blur-[100px] pointer-events-none group-hover:bg-grad-end/10 transition-colors duration-700"></div>
 
-                {/* Gold */}
-                {gold.length > 0 && (
-                    <div className="text-center">
-                        <h3 className="text-[10px] font-bold text-soft-lavender mb-12 font-mono tracking-[0.3em] uppercase opacity-70">
-               // LEVEL_02: GOLD_VECTORS
-                        </h3>
-                        <div className="flex flex-wrap justify-center gap-12 md:gap-20 items-center">
-                            {gold.map(s => (
-                                <div key={s.id} className="w-40 h-24 relative grayscale hover:grayscale-0 transition-all duration-500 opacity-30 hover:opacity-100 hover:scale-105 cursor-pointer">
-                                    <Image src={s.logo} alt={s.name} fill className="object-contain" />
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
+                    <h3 className="text-2xl md:text-4xl font-bold font-poppins text-white mb-4 tracking-tight relative z-10">
+                        It will be announced soon
+                    </h3>
+                    <p className="text-soft-lavender font-mono text-sm tracking-[0.2em] uppercase opacity-60 relative z-10">
+                        STAY_TUNED_FOR_THE_LINEUP
+                    </p>
 
-                {/* Silver */}
-                {silver.length > 0 && (
-                    <div className="text-center">
-                        <h3 className="text-[10px] font-bold text-text-muted mb-12 font-mono tracking-[0.3em] uppercase opacity-50">
-               // LEVEL_03: SILVER_VECTORS
-                        </h3>
-                        <div className="flex flex-wrap justify-center gap-10 md:gap-16 items-center">
-                            {silver.map(s => (
-                                <div key={s.id} className="w-32 h-20 relative grayscale hover:grayscale-0 transition-all duration-500 opacity-20 hover:opacity-80 cursor-pointer">
-                                    <Image src={s.logo} alt={s.name} fill className="object-contain" />
-                                </div>
-                            ))}
-                        </div>
+                    {/* Subtle pulse effect */}
+                    <div className="mt-8 flex justify-center relative z-10">
+                        <div className="w-2 h-2 rounded-full bg-neon-magenta animate-ping"></div>
                     </div>
-                )}
+                </motion.div>
             </div>
         </Section>
     );

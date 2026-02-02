@@ -82,7 +82,6 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Categories */}
                     <div>
                         <h3 className="text-lg font-bold mb-6 font-poppins text-white">
                             Categories
@@ -90,10 +89,10 @@ const Footer = () => {
                         <ul className="space-y-3 text-sm">
                             <li>
                                 <Link
-                                    href="/events?category=flagship"
+                                    href="/events?category=spotlight"
                                     className="hover:text-grad-end hover:pl-2 transition-all duration-300 block"
                                 >
-                                    Flagship Events
+                                    Spotlight
                                 </Link>
                             </li>
                             <li>
@@ -112,14 +111,6 @@ const Footer = () => {
                                     Management
                                 </Link>
                             </li>
-                            <li>
-                                <Link
-                                    href="/events?category=sports"
-                                    className="hover:text-grad-start hover:pl-2 transition-all duration-300 block"
-                                >
-                                    Sports
-                                </Link>
-                            </li>
                         </ul>
                     </div>
 
@@ -131,7 +122,7 @@ const Footer = () => {
                         <ul className="space-y-4 text-sm">
                             <li className="flex items-start gap-3 group cursor-pointer hover:text-white transition-colors">
                                 <FiMail className="mt-1 text-soft-lavender group-hover:text-neon-magenta transition-colors" />
-                                <span>manthan@tiss.edu</span>
+                                <span>tissforum.manthan2026@gmail.com</span>
                             </li>
                             <li className="flex items-start gap-3 group cursor-pointer hover:text-white transition-colors">
                                 <FiPhone className="mt-1 text-soft-lavender group-hover:text-neon-magenta transition-colors" />

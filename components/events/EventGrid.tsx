@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { FiSearch } from "react-icons/fi";
 import { motion } from "framer-motion";
 
-const CATEGORIES = ["All", "Flagship", "Cultural", "Management", "Sports"];
+const CATEGORIES = ["All", "Spotlight", "Cultural", "Management"];
 
 const EventGridContent = () => {
     const searchParams = useSearchParams();
@@ -46,8 +46,8 @@ const EventGridContent = () => {
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
                             className={`px-5 py-2 rounded-sm text-sm font-bold tracking-wider transition-all duration-300 relative overflow-hidden group ${activeCategory.toLowerCase() === cat.toLowerCase()
-                                    ? "text-dark-bg bg-primary-blue shadow-[0_0_15px_rgba(0,240,255,0.4)]"
-                                    : "text-gray-400 bg-white/5 hover:text-white hover:bg-white/10 border border-white/5"
+                                ? "text-dark-bg bg-primary-blue shadow-[0_0_15px_rgba(0,240,255,0.4)]"
+                                : "text-gray-400 bg-white/5 hover:text-white hover:bg-white/10 border border-white/5"
                                 }`}
                         >
                             <span className="relative z-10">{cat}</span>

@@ -3,6 +3,7 @@ import CountdownTimer from "@/components/home/Countdown";
 import { AboutPreview } from "@/components/home/AboutPreview";
 import { EventCategories } from "@/components/home/EventCategories";
 import { SpotlightEvents } from "@/components/home/SpotlightEvents";
+import { GalleryPreview } from "@/components/home/GalleryPreview";
 import { Sponsors } from "@/components/home/Sponsors";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <CountdownTimer />
       <AboutPreview />
       <EventCategories />
+      <GalleryPreview />
       <SpotlightEvents />
       <Sponsors />
     </div>

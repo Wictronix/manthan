@@ -44,10 +44,14 @@ const EventCard = ({ event, index = 0 }: EventCardProps) => {
 
                 <div className="relative h-48 w-full overflow-hidden rounded-t-2xl">
                     <Image
-                        src={event.image}
+                        src={event.image || "/images/01_HERO/Copy of HERO BANNER _MANTHAN.png"}
                         alt={event.title}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                        onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = "/images/01_HERO/Copy of HERO BANNER _MANTHAN.png";
+                        }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-secondary-surface to-transparent opacity-80" />
                     <div className="absolute top-4 right-4 bg-primary-bg/90 backdrop-blur-sm px-3 py-1 rounded-sm text-xs font-bold text-soft-lavender uppercase tracking-wide border border-white/10">

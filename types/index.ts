@@ -2,11 +2,11 @@ export interface Event {
     id: string;
     slug: string;
     title: string;
-    category: 'Cultural' | 'Management' | 'Sports' | 'Flagship';
+    category: 'Cultural' | 'Management' | 'Spotlight';
     shortDescription: string;
     fullDescription: string;
     date: string;
-    time: string;
+    time?: string;
     venue: string;
     image: string;
     rules: string[];
@@ -15,7 +15,7 @@ export interface Event {
         name: string;
         phone: string;
     };
-    registrationLink: string;
+    registrationLink?: string;
 }
 
 export interface Sponsor {

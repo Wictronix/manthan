@@ -19,7 +19,7 @@ const EVENT_IMAGES: Record<string, string> = {
 };
 
 const SpotlightEvents = () => {
-    const flagshipEvents = EVENTS.filter((e) => e.category === "Flagship");
+    const spotlightEvents = EVENTS.filter((e) => e.category === "Spotlight");
 
     return (
         <Section
@@ -38,12 +38,13 @@ const SpotlightEvents = () => {
                     </span>
                 </h2>
                 <p className="text-text-muted text-lg max-w-2xl mx-auto font-light italic">
-                    High stakes. Higher rewards. The central arena awaits.
+                    {/* The arena of stars. */}
+                    Laughter, music, and unforgettable nights.
                 </p>
             </div>
 
             <div className="grid grid-cols-1 gap-16">
-                {flagshipEvents.map((event, index) => (
+                {spotlightEvents.map((event, index) => (
                     <AnimatedCard key={event.id} index={index} event={event} />
                 ))}
             </div>
