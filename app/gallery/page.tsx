@@ -59,7 +59,7 @@ export default function GalleryPage() {
                     Gallery
                 </h1>
                 <p className="text-text-muted text-lg max-w-2xl mx-auto font-light mb-12">
-                    Relive the moments that made history at Mantha.
+                    Relive the moments that made history at Manthan.
                 </p>
 
                 {/* Scroll Hint */}

@@ -24,7 +24,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="space-y-4">
                         <h2 className="text-3xl font-bold font-poppins text-white tracking-tight">
-                            MANTHA<span className="text-neon-magenta">.</span>
+                            MANTHAN<span className="text-neon-magenta">.</span>
                         </h2>
                         <p className="text-sm leading-relaxed max-w-xs cursor-default">
                             The Annual Management & Cultural Fest of TISS Mumbai.
@@ -146,10 +146,9 @@ const Footer = () => {
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center gap-6 text-xs opacity-60">
                     {/* Left */}
                     <p className="order-2 md:order-1">
-                        © 2026 Mantha TISS. All rights reserved.
+                        © 2026 Manthan TISS. All rights reserved.
                     </p>
 
-                    {/* Center – Powered By */}
                     {/* Center – Powered By */}
                     <a
                         href="https://www.wictronix.com"
@@ -164,12 +163,6 @@ const Footer = () => {
                             className="h-10 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                         />
                     </a>
-
-
-                    {/* Right */}
-                    <p className="order-3 tracking-tighter opacity-50">
-                        Designed by Tech Team
-                    </p>
                 </div>
             </div>
         </footer>

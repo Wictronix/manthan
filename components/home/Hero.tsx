@@ -26,7 +26,7 @@ const Hero = () => {
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.1] grayscale"
                     style={{
                         backgroundImage:
-                            "url(https://placehold.co/1920x1080/0a0a0a/EC4899?text=Mantha+Cultural)",
+                            "url(https://placehold.co/1920x1080/0a0a0a/EC4899?text=Manthan+Cultural)",
                     }}
                 />
                 <div className="absolute inset-0 bg-grid opacity-[0.05] mask-radial-fade" />

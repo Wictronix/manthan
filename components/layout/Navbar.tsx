@@ -50,7 +50,7 @@ const Navbar = () => {
                 <Link href="/" className="flex items-center z-50 group">
                     <Image
                         src="/images/03_LOGOS/Manthan Logo new.png"
-                        alt="Mantha 26 Logo"
+                        alt="Manthan 26 Logo"
                         width={160}
                         height={60}
                         priority
