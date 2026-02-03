@@ -59,7 +59,7 @@ const Hero = () => {
                 >
                     <span className="shine-wrapper">
                         <span className="shine-text text-transparent bg-clip-text bg-gradient-to-b from-white via-text-secondary to-grad-mid">
-                            MANTHA
+                            MANTHAN
                         </span>
                         <motion.span
                             aria-hidden
