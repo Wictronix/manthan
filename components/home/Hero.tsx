@@ -29,7 +29,7 @@ const Hero = () => {
             >
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.1] grayscale"
-                    style={{ backgroundImage: 'url(https://placehold.co/1920x1080/0a0a0a/EC4899?text=Manthan+Cultural)' }}
+                    style={{ backgroundImage: 'url(https://placehold.co/1920x1080/0a0a0a/EC4899?text=Mantha+Cultural)' }}
                 />
                 {/* Pattern Layer */}
                 <div className="absolute inset-0 bg-grid opacity-[0.05] mask-radial-fade" />
@@ -64,7 +64,7 @@ const Hero = () => {
                 >
                     <span className="shine-wrapper">
                         <span className="shine-text text-transparent bg-clip-text bg-gradient-to-b from-white via-text-secondary to-grad-mid">
-                            MANTHAN
+                            MANTHA
                         </span>
 
                         {/* SLOW SWORD SHINE */}

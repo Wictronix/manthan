@@ -74,7 +74,7 @@ export const EVENTS: Event[] = [
         title: "UDGHOSH – Social Impact Case Competition",
         category: "Management",
         shortDescription: "Test your social sensitivity and strategic thinking.",
-        fullDescription: "Udghosh is Manthan’s premier competition that tests social sensitivity and strategic thinking. It focuses on solving real-world challenges in the developmental sector, requiring empathy and sustainable solutions.",
+        fullDescription: "Udghosh is Mantha’s premier competition that tests social sensitivity and strategic thinking. It focuses on solving real-world challenges in the developmental sector, requiring empathy and sustainable solutions.",
         date: "13th February, 2026",
         time: "12:00 PM",
         venue: "A.R. Wadia Hall, TISS New Campus",
@@ -84,7 +84,7 @@ export const EVENTS: Event[] = [
         ],
         prizePool: "INR 10,000",
         contactPerson: {
-            name: "Team Manthan",
+            name: "Team Mantha",
             phone: "+91 95998 74790",
         },
         registrationLink: "https://forms.gle/Sz4xhpp7J3Tg12sF7",
@@ -105,7 +105,7 @@ export const EVENTS: Event[] = [
         ],
         prizePool: "INR 10,000",
         contactPerson: {
-            name: "Team Manthan",
+            name: "Team Mantha",
             phone: "+91 95998 74790",
         },
         registrationLink: "https://forms.gle/Sz4xhpp7J3Tg12sF7",
@@ -115,8 +115,8 @@ export const EVENTS: Event[] = [
         slug: "flashmob",
         title: "FLASHMOB – The Ultimate Dance Surprise",
         category: "Spotlight",
-        shortDescription: "The high-energy launch of Manthan 2026.",
-        fullDescription: "Experience the ultimate dance surprise with our signature flashmob, marking the electric beginning of Manthan 2026.",
+        shortDescription: "The high-energy launch of Mantha 2026.",
+        fullDescription: "Experience the ultimate dance surprise with our signature flashmob, marking the electric beginning of Mantha 2026.",
         date: "11th February, 2026",
         venue: "Near Dining Hall, TISS Main Campus",
         image: "/images/01_HERO/Copy of HERO BANNER _MANTHAN.png",
@@ -125,7 +125,7 @@ export const EVENTS: Event[] = [
         ],
         prizePool: "—",
         contactPerson: {
-            name: "Team Manthan",
+            name: "Team Mantha",
             phone: "+91 95998 74790",
         },
     },
@@ -144,7 +144,7 @@ export const EVENTS: Event[] = [
         ],
         prizePool: "Exciting Goodies",
         contactPerson: {
-            name: "Team Manthan",
+            name: "Team Mantha",
             phone: "+91 95998 74790",
         },
         registrationLink: "https://forms.gle/Sz4xhpp7J3Tg12sF7",
@@ -164,7 +164,7 @@ export const EVENTS: Event[] = [
         ],
         prizePool: "Exciting Goodies",
         contactPerson: {
-            name: "Team Manthan",
+            name: "Team Mantha",
             phone: "+91 95998 74790",
         },
     },
@@ -183,7 +183,7 @@ export const EVENTS: Event[] = [
         ],
         prizePool: "INR 5,000",
         contactPerson: {
-            name: "Team Manthan",
+            name: "Team Mantha",
             phone: "+91 95998 74790",
         },
         registrationLink: "https://forms.gle/Sz4xhpp7J3Tg12sF7",
@@ -201,7 +201,7 @@ export const EVENTS: Event[] = [
         rules: [],
         prizePool: "INR 25,000",
         contactPerson: {
-            name: "Team Manthan",
+            name: "Team Mantha",
             phone: "+91 95998 74790",
         },
     },
@@ -218,7 +218,7 @@ export const EVENTS: Event[] = [
         rules: [],
         prizePool: "INR 5,000",
         contactPerson: {
-            name: "Team Manthan",
+            name: "Team Mantha",
             phone: "+91 95998 74790",
         },
     },
@@ -235,7 +235,7 @@ export const EVENTS: Event[] = [
         rules: [],
         prizePool: "INR 5,000",
         contactPerson: {
-            name: "Team Manthan",
+            name: "Team Mantha",
             phone: "+91 95998 74790",
         },
     },
@@ -252,7 +252,7 @@ export const EVENTS: Event[] = [
         rules: [],
         prizePool: "—",
         contactPerson: {
-            name: "Team Manthan",
+            name: "Team Mantha",
             phone: "+91 95998 74790",
         },
     },
@@ -271,7 +271,7 @@ export const EVENTS: Event[] = [
         ],
         prizePool: "—",
         contactPerson: {
-            name: "Team Manthan",
+            name: "Team Mantha",
             phone: "+91 95998 74790",
         },
     },

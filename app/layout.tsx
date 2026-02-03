@@ -18,8 +18,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Manthan 2026 | Dare. Dream. Discover",
-  description: "Official website for Manthan 2026, the Annual Cultural & Management Fest of TISS Mumbai.",
+  title: "Mantha 2026 | Dare. Dream. Discover",
+  description: "Official website for Mantha 2026, the Annual Cultural & Management Fest of TISS Mumbai.",
 };
 
 export default function RootLayout({
