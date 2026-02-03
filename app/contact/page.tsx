@@ -14,9 +14,36 @@ export default function ContactPage() {
         setOpenFaq(openFaq === id ? null : id);
     };
 
-    const handleFormSubmit = (e: React.FormEvent) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        alert("Message sent successfully!");
+        setIsSubmitting(true);
+
+        const formData = new FormData(e.currentTarget);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch("https://nocodeform.io/f/6982236dd4f1bd33496ccaaa", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                alert("Message sent successfully!");
+                (e.target as HTMLFormElement).reset();
+            } else {
+                alert("Failed to send message. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("An error occurred. Please try again later.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -41,23 +68,23 @@ export default function ContactPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Full Name</label>
-                                <input type="text" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="John Doe" />
+                                <input type="text" name="name" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="John Doe" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Phone Number</label>
-                                <input type="tel" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="+91 XXXX XXXX" />
+                                <input type="tel" name="phone" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="+91 XXXX XXXX" />
                             </div>
                         </div>
                         <div className="space-y-2">
                             <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Email Address</label>
-                            <input type="email" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="user@example.com" />
+                            <input type="email" name="email" required className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="user@example.com" />
                         </div>
                         <div className="space-y-2">
                             <label className="text-[10px] font-bold text-text-muted uppercase tracking-widest ml-1">Message</label>
-                            <textarea required rows={5} className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="How can we help you?"></textarea>
+                            <textarea name="message" required rows={5} className="w-full px-4 py-4 bg-secondary-surface/40 backdrop-blur-md rounded-sm border border-white/5 text-white focus:outline-none focus:border-neon-magenta/50 focus:bg-secondary-surface/60 transition-all font-mono text-sm" placeholder="How can we help you?"></textarea>
                         </div>
-                        <Button type="submit" variant="primary" size="lg" fullWidth>
-                            Send Message
+                        <Button type="submit" variant="primary" size="lg" fullWidth disabled={isSubmitting}>
+                            {isSubmitting ? "Sending..." : "Send Message"}
                         </Button>
                     </form>
                 </div>
