@@ -50,7 +50,7 @@ export default function AboutPage() {
                     >
                         About{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-grad-start to-grad-end">
-                            Mantha
+                            Manthan
                         </span>
                     </motion.h1>
                     <p className="text-soft-lavender uppercase tracking-widest">
@@ -83,11 +83,11 @@ export default function AboutPage() {
                         <div className="space-y-8 p-12 rounded-2xl bg-secondary-surface/30 border border-white/5 relative overflow-hidden backdrop-blur-md max-w-4xl mx-auto">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-grad-mid/5 blur-[100px] -z-10" />
                             <h2 className="text-3xl font-bold font-poppins text-neon-magenta flex items-center gap-3">
-                                <span className="text-white opacity-20">/</span> Mantha
+                                <span className="text-white opacity-20">/</span> Manthan
                             </h2>
                             <div className="text-text-secondary leading-relaxed text-lg font-light space-y-6">
                                 <p>
-                                    Mantha, meaning “churning of ideas”, is the Annual Management & Cultural Fest of TISS Mumbai—a dynamic convergence of creativity, leadership, and social consciousness.
+                                    Manthan, meaning “churning of ideas”, is the Annual Management & Cultural Fest of TISS Mumbai, a dynamic convergence of creativity, leadership, and social consciousness.
                                 </p>
                                 <p>
                                     As one of the most anticipated inter-college festivals in Mumbai, it attracts participation from 80+ premier institutions. It is a platform where culture meets strategy, reflecting TISS’s ethos of building socially responsible leaders.
@@ -136,7 +136,7 @@ export default function AboutPage() {
                                 The <span className="text-soft-lavender">Architects</span>
                             </h2>
                             <p className="text-text-muted">
-                                Meet the team behind Mantha 2026
+                                Meet the team behind Manthan 2026
                             </p>
                         </div>
 
