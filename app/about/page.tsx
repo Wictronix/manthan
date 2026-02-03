@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Sponsors } from "@/components/home/Sponsors";
 import { TEAM } from "@/data/mock";
 import { useState, useEffect, useRef } from "react";
-import { FiPlay, FiX } from "react-icons/fi";
+import { FiPlay, FiX, FiPhone, FiMail } from "react-icons/fi";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -140,35 +140,36 @@ export default function AboutPage() {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {TEAM.map((member) => (
-                                <div
-                                    key={member.id}
-                                    className="rounded-2xl bg-secondary-surface/40 border border-white/5 p-6 text-center"
-                                >
-                                    <div className="w-40 h-40 mx-auto rounded-2xl overflow-hidden mb-4 border border-white/10 relative">
+                                <div key={member.id} className="bg-elevated-section/40 backdrop-blur-md p-10 rounded-2xl border border-white/5 flex flex-col items-center text-center hover:border-soft-lavender/30 transition-all duration-500 shadow-2xl group relative overflow-hidden">
+                                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-soft-lavender/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
+
+                                    <div className="w-32 h-32 relative rounded-full overflow-hidden mb-8 border-2 border-white/10 group-hover:border-neon-magenta transition-all duration-500 shadow-[0_0_20px_rgba(0,0,0,0.5)] bg-grad-mid/10">
                                         {member.image ? (
                                             <Image
                                                 src={member.image}
                                                 alt={member.name}
                                                 fill
-                                                className="object-cover"
+                                                className="object-cover transition-all duration-700"
                                             />
                                         ) : (
-                                            <div className="w-full h-full bg-grad-mid/20 flex items-center justify-center">
-                                                <span className="text-xs text-text-muted">
-                                                    PHOTO_PENDING
-                                                </span>
+                                            <div className="absolute inset-0 flex items-center justify-center p-4">
+                                                <span className="text-text-muted font-mono text-[8px] tracking-widest uppercase text-center">[ PHOTO_PENDING ]</span>
                                             </div>
                                         )}
                                     </div>
-                                    <h3 className="text-white font-bold">{member.name}</h3>
-                                    <p className="text-soft-lavender text-xs uppercase">
-                                        {member.role}
-                                    </p>
-                                    <p className="text-text-muted text-xs mt-2">
-                                        {member.phone}
-                                    </p>
+                                    <h3 className="text-xl font-bold font-poppins text-white mb-1">{member.name}</h3>
+                                    <p className="text-neon-magenta font-mono text-[10px] mb-8 uppercase tracking-[0.2em] opacity-80">{member.role}</p>
+
+                                    <div className="space-y-2 w-full pt-6 border-t border-white/5">
+                                        <a href={`tel:${member.phone}`} className="flex items-center justify-center gap-3 text-sm text-text-muted hover:text-white transition-colors p-3 rounded-md hover:bg-white/5">
+                                            <FiPhone className="text-soft-lavender opacity-60" /> <span className="font-mono">{member.phone}</span>
+                                        </a>
+                                        <a href={`mailto:${member.email}`} className="flex items-center justify-center gap-3 text-sm text-text-muted hover:text-white transition-colors p-3 rounded-md hover:bg-white/5">
+                                            <FiMail className="text-soft-lavender opacity-60" /> <span className="font-mono">{member.email}</span>
+                                        </a>
+                                    </div>
                                 </div>
                             ))}
                         </div>
