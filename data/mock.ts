@@ -386,7 +386,7 @@ export const TEAM: TeamMember[] = [
         id: "9",
         name: "Ameesh Devwrat",
         role: "Team Member",
-        image: "", // MISSING IMAGE
+        image: "/team/Ameesh.png",
         phone: "+91 99206 01359",
         email: "tissforum.manthan2026@gmail.com"
     },
