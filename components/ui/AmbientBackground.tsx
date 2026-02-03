@@ -18,7 +18,7 @@ const AmbientBackground = () => {
         let height = window.innerHeight;
 
         // Configuration
-        const particleCount = 100; // Reduced for clarity
+        const particleCount = 70; // Reduced for clarity
         const connectionDistance = 150;
         const mouseParams = { x: -1000, y: -1000, radius: 200 };
 

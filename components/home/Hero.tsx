@@ -20,29 +20,24 @@ const Hero = () => {
             ref={containerRef}
             className="relative h-screen pt-20 flex items-center justify-center overflow-hidden bg-primary-bg text-center"
         >
-
-
             {/* Background Layers */}
-            <motion.div
-                style={{ y, opacity }}
-                className="absolute inset-0 z-0"
-            >
+            <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.1] grayscale"
-                    style={{ backgroundImage: 'url(https://placehold.co/1920x1080/0a0a0a/EC4899?text=Mantha+Cultural)' }}
+                    style={{
+                        backgroundImage:
+                            "url(https://placehold.co/1920x1080/0a0a0a/EC4899?text=Mantha+Cultural)",
+                    }}
                 />
-                {/* Pattern Layer */}
                 <div className="absolute inset-0 bg-grid opacity-[0.05] mask-radial-fade" />
-
-                {/* Ambient Orbs */}
                 <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-grad-start/10 rounded-full blur-[120px] animate-float opacity-50" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-neon-magenta/5 rounded-full blur-[100px] animate-float opacity-30" style={{ animationDelay: '2s' }} />
-
+                <div
+                    className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-neon-magenta/5 rounded-full blur-[100px] animate-float opacity-30"
+                    style={{ animationDelay: "2s" }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-bg via-primary-bg/80 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-b from-primary-bg/50 via-transparent to-primary-bg" />
             </motion.div>
-
-
 
             <div className="relative z-10 px-4 max-w-6xl mx-auto">
                 <motion.div
@@ -66,8 +61,6 @@ const Hero = () => {
                         <span className="shine-text text-transparent bg-clip-text bg-gradient-to-b from-white via-text-secondary to-grad-mid">
                             MANTHA
                         </span>
-
-                        {/* SLOW SWORD SHINE */}
                         <motion.span
                             aria-hidden
                             className="shine-overlay"
@@ -81,39 +74,7 @@ const Hero = () => {
                             }}
                         />
                     </span>
-
-                    {/* INTERNAL STYLES */}
-                    <style jsx>{`
-    .shine-wrapper {
-      position: relative;
-      display: inline-block;
-      overflow: hidden;
-    }
-
-    .shine-text {
-      position: relative;
-      z-index: 1;
-    }
-
-    .shine-overlay {
-      position: absolute;
-      inset: 0;
-      width: 160%;
-      height: 100%;
-      background: linear-gradient(
-        120deg,
-        transparent 42%,
-        rgba(255, 255, 255, 0.75) 50%,
-        transparent 58%
-      );
-      filter: blur(2.5px);
-      mix-blend-mode: screen;
-      pointer-events: none;
-    }
-  `}</style>
                 </motion.h1>
-
-
 
                 <motion.p
                     initial={{ opacity: 0 }}
@@ -121,17 +82,9 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-2xl md:text-4xl font-light mb-10 text-soft-lavender tracking-widest opacity-80"
                 >
-                    Dare<span className="text-white/10 mx-4">/</span>Dream<span className="text-white/10 mx-4">/</span>Discover
+                    Dare<span className="text-white/10 mx-4">/</span>Dream
+                    <span className="text-white/10 mx-4">/</span>Discover
                 </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    className="text-sm md:text-base text-text-muted font-mono mb-12 flex items-center justify-center gap-4"
-                >
-                    February 12–13, 2026
-                </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -139,9 +92,9 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 1 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
-                    <MagneticButton href="/events">
+                    <a href="/events" className="glow-btn">
                         Register Now
-                    </MagneticButton>
+                    </a>
 
                     <Button size="lg" variant="outline" href="/about">
                         Learn More
@@ -149,16 +102,102 @@ const Hero = () => {
                 </motion.div>
             </div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5, duration: 1 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-            >
+            {/* ✅ STYLES MUST LIVE HERE */}
+            <style jsx>{`
+                .shine-wrapper {
+                    position: relative;
+                    display: inline-block;
+                    overflow: hidden;
+                }
+                .shine-text {
+                    position: relative;
+                    z-index: 1;
+                }
+                .shine-overlay {
+                    position: absolute;
+                    inset: 0;
+                    width: 160%;
+                    height: 100%;
+                    background: linear-gradient(
+                        120deg,
+                        transparent 42%,
+                        rgba(255, 255, 255, 0.75) 50%,
+                        transparent 58%
+                    );
+                    filter: blur(2.5px);
+                    mix-blend-mode: screen;
+                    pointer-events: none;
+                }
 
-                <div className="w-[1px] h-12 bg-gradient-to-b from-soft-lavender to-transparent"></div>
-            </motion.div>
+                /* REGISTER NOW BUTTON */
+                .glow-btn {
+                    min-width: 260px;
+                    height: 60px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 600;
+                    letter-spacing: 0.12em;
+                    text-transform: uppercase;
+                    color: #f5e9ff;
+                    background: linear-gradient(
+                        90deg,
+                        rgba(236, 72, 153, 0.95),
+                        rgba(168, 85, 247, 0.95)
+                    );
+                    border-radius: 999px;
+                    position: relative;
+                    box-shadow: 0 0 35px rgba(236, 72, 153, 0.45);
+                    transition: all 0.35s ease;
+                }
+
+                .glow-btn::before {
+                    content: "";
+                    position: absolute;
+                    inset: -6px;
+                    border-radius: 999px;
+                    border: 2px solid rgba(236, 72, 153, 0.9);
+                    box-shadow: 0 0 60px rgba(236, 72, 153, 0.8);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+
+                .glow-btn::after {
+                    content: "";
+                    position: absolute;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    border: 2px solid rgba(236, 72, 153, 0.9);
+                    animation: pulse-ring 1.8s infinite;
+                }
+
+                .glow-btn:hover {
+                    transform: translateY(-6px);
+                }
+
+                .glow-btn:hover::before {
+                    opacity: 1;
+                }
+
+                .glow-btn:hover::after {
+                    animation: none;
+                    opacity: 0;
+                }
+
+                @keyframes pulse-ring {
+                    0% {
+                        width: 24px;
+                        height: 24px;
+                        opacity: 1;
+                    }
+                    100% {
+                        width: 280px;
+                        height: 280px;
+                        opacity: 0;
+                    }
+                }
+            `}</style>
         </div>
     );
 };
