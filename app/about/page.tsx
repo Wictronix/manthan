@@ -59,42 +59,42 @@ export default function AboutPage() {
                 </div>
             </div>
 
-                              {/* ================= ABOUT TISS & MANTHAN ================= */}
-                    <div className="space-y-24">
-                        {/* TISS */}
-                        <div className="space-y-8 max-w-4xl mx-auto">
-                            <h2 className="text-3xl font-bold font-poppins text-soft-lavender flex items-center gap-3">
-                                <span className="text-neon-magenta opacity-50">/</span> TISS Mumbai
-                            </h2>
-                            <div className="text-text-secondary leading-relaxed text-lg font-light space-y-6">
-                                <p>
-                                    The Tata Institute of Social Sciences (TISS), Mumbai, established in 1936, is one of India’s most prestigious institutions in the field of social sciences, public policy, and management education.
-                                </p>
-                                <p>
-                                    A Deemed-to-be University since 1964 and fully funded by the Government of India, TISS carries a strong public mandate rooted in equity, justice, democracy, and human dignity.
-                                </p>
-                                <p>
-                                    TISS offers elite programs including its <span className="text-white font-medium border-b border-soft-lavender/30">HRM & LR program</span>, consistently ranked among the top HR programs in India, producing industry-ready leaders with strong strategy orientation.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Manthan */}
-                        <div className="space-y-8 p-12 rounded-2xl bg-secondary-surface/30 border border-white/5 relative overflow-hidden backdrop-blur-md max-w-4xl mx-auto">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-grad-mid/5 blur-[100px] -z-10" />
-                            <h2 className="text-3xl font-bold font-poppins text-neon-magenta flex items-center gap-3">
-                                <span className="text-white opacity-20">/</span> Manthan
-                            </h2>
-                            <div className="text-text-secondary leading-relaxed text-lg font-light space-y-6">
-                                <p>
-                                    Manthan, meaning “churning of ideas”, is the Annual Management & Cultural Fest of TISS Mumbai, a dynamic convergence of creativity, leadership, and social consciousness.
-                                </p>
-                                <p>
-                                    As one of the most anticipated inter-college festivals in Mumbai, it attracts participation from 80+ premier institutions. It is a platform where culture meets strategy, reflecting TISS’s ethos of building socially responsible leaders.
-                                </p>
-                            </div>
-                        </div>
+            {/* ================= ABOUT TISS & MANTHAN ================= */}
+            <div className="space-y-24">
+                {/* TISS */}
+                <div className="space-y-8 max-w-4xl mx-auto">
+                    <h2 className="text-3xl font-bold font-poppins text-soft-lavender flex items-center gap-3">
+                        <span className="text-neon-magenta opacity-50">/</span> TISS Mumbai
+                    </h2>
+                    <div className="text-text-secondary leading-relaxed text-lg font-light space-y-6">
+                        <p>
+                            The Tata Institute of Social Sciences (TISS), Mumbai, established in 1936, is one of India’s most prestigious institutions in the field of social sciences, public policy, and management education.
+                        </p>
+                        <p>
+                            A Deemed-to-be University since 1964 and fully funded by the Government of India, TISS carries a strong public mandate rooted in equity, justice, democracy, and human dignity.
+                        </p>
+                        <p>
+                            TISS offers elite programs including its <span className="text-white font-medium border-b border-soft-lavender/30">HRM & LR program</span>, consistently ranked among the top HR programs in India, producing industry-ready leaders with strong strategy orientation.
+                        </p>
                     </div>
+                </div>
+
+                {/* Manthan */}
+                <div className="space-y-8 p-12 rounded-2xl bg-secondary-surface/30 border border-white/5 relative overflow-hidden backdrop-blur-md max-w-4xl mx-auto">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-grad-mid/5 blur-[100px] -z-10" />
+                    <h2 className="text-3xl font-bold font-poppins text-neon-magenta flex items-center gap-3">
+                        <span className="text-white opacity-20">/</span> Manthan
+                    </h2>
+                    <div className="text-text-secondary leading-relaxed text-lg font-light space-y-6">
+                        <p>
+                            Manthan, meaning “churning of ideas”, is the Annual Management & Cultural Fest of TISS Mumbai, a dynamic convergence of creativity, leadership, and social consciousness.
+                        </p>
+                        <p>
+                            As one of the most anticipated inter-college festivals in Mumbai, it attracts participation from 80+ premier institutions. It is a platform where culture meets strategy, reflecting TISS’s ethos of building socially responsible leaders.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
 
             {/* ================= CONTENT ================= */}
@@ -146,12 +146,13 @@ export default function AboutPage() {
                                     key={member.id}
                                     className="rounded-2xl bg-secondary-surface/40 border border-white/5 p-6 text-center"
                                 >
-                                    <div className="w-40 h-40 mx-auto rounded-2xl overflow-hidden mb-4 border border-white/10">
+                                    <div className="w-40 h-40 mx-auto rounded-2xl overflow-hidden mb-4 border border-white/10 relative">
                                         {member.image ? (
-                                            <img
+                                            <Image
                                                 src={member.image}
                                                 alt={member.name}
-                                                className="w-full h-full object-cover"
+                                                fill
+                                                className="object-cover"
                                             />
                                         ) : (
                                             <div className="w-full h-full bg-grad-mid/20 flex items-center justify-center">
