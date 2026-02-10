@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { FiPlay, FiX } from "react-icons/fi";
+import { FiPlay, FiX } from "react-icons/fi"; 
 
 const AboutPreview = () => {
     const [isVideoOpen, setIsVideoOpen] = useState(false);
