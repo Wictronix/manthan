@@ -9,7 +9,7 @@ import {
     FiTwitter,
     FiMail,
     FiPhone,
-} from "react-icons/fi";
+} from "react-icons/fi"; 
 
 import wxLogo from "@/app/gallery/wictronix/wictronix-logo.png";
 
