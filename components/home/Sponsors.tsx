@@ -2,8 +2,17 @@
 
 import { Section } from "@/components/ui/Section";
 import { motion } from "framer-motion";
+import { SPONSORS } from "@/data/mock";
+import Image from "next/image";
 
 const Sponsors = () => {
+    // Row 1: Title, Associate, Event, Tech
+    const row1Types = ['Title Sponsor', 'Associate Sponsor', 'Event Partner', 'Tech Partner'];
+    const row1Sponsors = SPONSORS.filter(s => row1Types.includes(s.type));
+
+    // Row 2: Snacking, Logistics, Others
+    const row2Sponsors = SPONSORS.filter(s => !row1Types.includes(s.type));
+
     return (
         <Section background="default" pattern="grid" mask="linear" showOrbs orbColor="primary" className="py-24 border-t border-white/5">
             <div className="text-center mb-16">
@@ -18,32 +27,89 @@ const Sponsors = () => {
                 </p>
             </div>
 
-            <div className="max-w-4xl mx-auto px-4">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="relative group overflow-hidden rounded-2xl border border-white/10 bg-secondary-surface/30 backdrop-blur-xl p-12 md:p-20 text-center shadow-2xl"
-                >
-                    {/* Animated background highlights */}
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-grad-start/5 blur-[100px] pointer-events-none group-hover:bg-grad-start/10 transition-colors duration-700"></div>
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-grad-end/5 blur-[100px] pointer-events-none group-hover:bg-grad-end/10 transition-colors duration-700"></div>
+            <div className="flex flex-col gap-12 relative overflow-hidden w-full">
+                {/* Gradient Masks for smooth fade edges */}
+                <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-primary-bg to-transparent z-10 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-primary-bg to-transparent z-10 pointer-events-none" />
 
-                    <h3 className="text-2xl md:text-4xl font-bold font-poppins text-white mb-4 tracking-tight relative z-10">
-                        It will be announced soon
-                    </h3>
-                    <p className="text-soft-lavender font-mono text-sm tracking-[0.2em] uppercase opacity-60 relative z-10">
-                        STAY_TUNED_FOR_THE_LINEUP
-                    </p>
+                {/* ROW 1 - Left Direction */}
+                <div className="flex gap-8 w-max">
+                    <MarqueeContent sponsors={row1Sponsors} direction="left" />
+                    <MarqueeContent sponsors={row1Sponsors} direction="left" />
+                </div>
 
-                    {/* Subtle pulse effect */}
-                    <div className="mt-8 flex justify-center relative z-10">
-                        <div className="w-2 h-2 rounded-full bg-neon-magenta animate-ping"></div>
-                    </div>
-                </motion.div>
+                {/* ROW 2 - Right Direction */}
+                <div className="flex gap-8 w-max">
+                    <MarqueeContent sponsors={row2Sponsors} direction="right" />
+                    <MarqueeContent sponsors={row2Sponsors} direction="right" />
+                </div>
             </div>
         </Section>
+    );
+};
+
+const MarqueeContent = ({ sponsors, direction = "left" }: { sponsors: typeof SPONSORS, direction?: "left" | "right" }) => {
+    return (
+        <motion.div
+            initial={{ x: direction === "left" ? 0 : "-100%" }}
+            animate={{ x: direction === "left" ? "-100%" : 0 }}
+            transition={{
+                duration: 40,
+                repeat: Infinity,
+                ease: "linear",
+            }}
+            className="flex gap-8"
+        >
+            {sponsors.map((sponsor) => (
+                <a
+                    key={sponsor.id}
+                    href={sponsor.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                        group
+                        relative
+                        w-48 h-32 md:w-72 md:h-44
+                        flex flex-col items-center justify-between
+                        bg-white
+                        border border-white/5 rounded-xl
+                        hover:border-neon-magenta/50
+                        transition-all duration-300
+                        p-3 md:p-6
+                        overflow-hidden
+                    "
+                >
+                    <div className="w-full flex justify-center pt-2">
+                        <span className={`
+                            text-[8px] md:text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full border
+                            ${sponsor.type.includes('Title') ? 'bg-yellow-50 text-yellow-700 border-yellow-200' :
+                                sponsor.type.includes('Associate') ? 'bg-blue-50 text-blue-700 border-blue-200' :
+                                    'bg-gray-50 text-gray-600 border-gray-200'}
+                         `}>
+                            {sponsor.type}
+                        </span>
+                    </div>
+
+                    <div className="relative w-full h-16 md:h-20 mt-1 md:mt-2">
+                        <Image
+                            src={sponsor.logo}
+                            alt={sponsor.name}
+                            fill
+                            className="object-contain transition-transform duration-500 group-hover:scale-105"
+                        />
+                    </div>
+
+                    <div className="text-center z-10 w-full pt-2 border-t border-gray-100 mt-auto">
+                        <h4 className="text-primary-bg font-bold text-xs md:text-sm tracking-wide group-hover:text-neon-magenta transition-colors line-clamp-1">
+                            {sponsor.name}
+                        </h4>
+                    </div>
+
+                    {/* Hover Glow */}
+                    <div className="absolute inset-0 bg-neon-magenta/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none" />
+                </a>
+            ))}
+        </motion.div>
     );
 };
 

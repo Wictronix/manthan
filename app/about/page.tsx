@@ -50,7 +50,7 @@ export default function AboutPage() {
                     >
                         About{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-grad-start to-grad-end">
-                            Manthan
+                            Us
                         </span>
                     </motion.h1>
                     <p className="text-soft-lavender uppercase tracking-widest">

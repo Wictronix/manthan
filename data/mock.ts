@@ -132,13 +132,13 @@ export const EVENTS: Event[] = [
     {
         id: "sneak-snap",
         slug: "sneak-snap",
-        title: "SNEAK & SNAP – Street Photography & Treasure Hunt",
+        title: "SNEAK & SNAP- TREASURE HUNT",
         category: "Spotlight",
-        shortDescription: "Explore, click, and solve the mystery.",
-        fullDescription: "A unique blend of street photography and a treasure hunt. Uncover hidden gems of the campus through your lens while solving clues.",
+        shortDescription: "Explore, solve and find the hidden treasure",
+        fullDescription: "Explore, solve and find the hidden treasure",
         date: "13th February, 2026",
         venue: "Amphitheatre, TISS New Campus",
-        image: "",
+        image: "/images/SPOTLIGHT_EVENTS/Sneak and snap.JPG",
         rules: [
             "Open for everyone.",
         ],
@@ -152,13 +152,13 @@ export const EVENTS: Event[] = [
     {
         id: "kismat-konnection",
         slug: "kismat-konnection",
-        title: "KISMAT KONNECTION – The Fun Mixer Event",
+        title: "Kismat Konnection- Fate, Fun &Feats",
         category: "Spotlight",
-        shortDescription: "The ultimate ice-breaking mixer.",
-        fullDescription: "An interactive and fun-filled event designed to break the ice and build new connections through quirky games and activities.",
+        shortDescription: "Is it fate or just great chemistry?",
+        fullDescription: "Is it fate or just great chemistry? Join us for an evening of lighthearted games and sparks as we discover which duos are truly written in the stars",
         date: "13th February, 2026",
         venue: "Amphitheatre, TISS New Campus",
-        image: "",
+        image: "/images/SPOTLIGHT_EVENTS/Kismat Connection.JPG",
         rules: [
             "Open for everyone.",
         ],
@@ -242,13 +242,13 @@ export const EVENTS: Event[] = [
     {
         id: "khyaal-e-bandish",
         slug: "khyaal-e-bandish",
-        title: "KHYAAL-E-BANDISH – Fusion & Band Battle",
+        title: "Khayal-e-Bandish- Sufi Band Performance",
         category: "Spotlight",
-        shortDescription: "The ultimate clash of the bands.",
-        fullDescription: "Witness the convergence of musical genres as bands from across the country battle it out with fusion and electric performances.",
+        shortDescription: "Sufi Band Performance",
+        fullDescription: "Sufi Band Performance",
         date: "12th Feb, 2026",
         venue: "Convention Hall",
-        image: "",
+        image: "/images/SPOTLIGHT_EVENTS/Khayal-e-Bandish.jpg",
         rules: [],
         prizePool: "—",
         contactPerson: {
@@ -259,16 +259,33 @@ export const EVENTS: Event[] = [
     {
         id: "star-night",
         slug: "star-night",
-        title: "STAR NIGHT – The Grand Finale",
+        title: "Star Night – Guess Who?",
         category: "Spotlight",
         shortDescription: "Artist: COMING SOON",
         fullDescription: "The grand finale star night. Artist to be announced soon! Exclusive for TISS students and guest performers.",
         date: "12th Feb, 2026",
         venue: "Convention Hall",
-        image: "",
+        image: "/images/SPOTLIGHT_EVENTS/Copy of HERO BANNER _MANTHAN.png",
         rules: [
             "Coming Soon",
         ],
+        prizePool: "—",
+        contactPerson: {
+            name: "Team Manthan",
+            phone: "+91 95998 74790",
+        },
+    },
+    {
+        id: "fashion-show",
+        slug: "fashion-show",
+        title: "Fashion Show- Unleash Your Style.",
+        category: "Spotlight",
+        shortDescription: "Fashion Unscripted. Not a competition, but a statement.",
+        fullDescription: "Fashion Unscripted. Not a competition, but a statement. This showcase celebrates fashion as an expression of confidence, culture, and creativity",
+        date: "13th February, 2026",
+        venue: "Convention Hall",
+        image: "/images/SPOTLIGHT_EVENTS/Fashion Show.jpg",
+        rules: [],
         prizePool: "—",
         contactPerson: {
             name: "Team Manthan",
@@ -281,21 +298,80 @@ export const EVENTS: Event[] = [
 export const SPONSORS: Sponsor[] = [
     {
         id: '1',
-        name: 'Heritage Foundation',
-        tier: 'Platinum',
-        logo: 'https://placehold.co/400x200?text=Heritage+Foundation'
+        name: 'Bajaj Auto Ltd.',
+        type: 'Title Sponsor',
+        logo: '/SPONSORS_ LOGO/Bajaj Auto Ltd.- TITLE SPONSOR.png',
+        website: 'https://www.bajajauto.com/about-us/about-bajaj-group#'
     },
     {
         id: '2',
-        name: 'BevCo',
-        tier: 'Gold',
-        logo: 'https://placehold.co/400x200?text=BevCo'
+        name: 'NTPC',
+        type: 'Associate Sponsor',
+        logo: '/SPONSORS_ LOGO/NTPC - Associate Sponsor.png',
+        website: 'https://ntpc.co.in/about-us'
     },
     {
         id: '3',
-        name: 'EduMate',
-        tier: 'Silver',
-        logo: 'https://placehold.co/400x200?text=EduMate'
+        name: 'WictroniX',
+        type: 'Tech Partner',
+        logo: '/SPONSORS_ LOGO/Wictronix_Tech Partner.png',
+        website: 'https://wictronix.com/about'
+    },
+    {
+        id: '4',
+        name: 'BHEL',
+        type: 'Event Partner',
+        logo: '/SPONSORS_ LOGO/BHEL-EVENT PARTNER.png',
+        website: 'https://www.bhel.com/about-us'
+    },
+    {
+        id: '5',
+        name: 'Powergrid Corporation',
+        type: 'Event Partner',
+        logo: '/SPONSORS_ LOGO/Powergrid Corporation_Event Partner.png',
+        website: 'https://www.powergrid.in/en/company-overview'
+    },
+    {
+        id: '6',
+        name: 'Rashtriya Chemicals & Fertilizers',
+        type: 'Event Partner',
+        logo: '/SPONSORS_ LOGO/Rashtriya Chemicals & Fertilizers- Event Partner.png',
+        website: 'https://www.rcfltd.com/rcf-at-glance-1'
+    },
+    {
+        id: '7',
+        name: 'Safexpress',
+        type: 'Logistics Partner',
+        logo: '/SPONSORS_ LOGO/Safexpress-Logistics Partner.png',
+        website: 'https://www.safexpress.com/about/overview'
+    },
+    {
+        id: '8',
+        name: 'MYOP',
+        type: 'Gifting Partner',
+        logo: '/SPONSORS_ LOGO/MYOP- GIFTING PARTNER.webp',
+        website: 'https://myop.in/pages/about-us?srsltid=AfmBOordL0-1oRU3bm_Qlz8s1ilXO6dbE34pWSLU-1e7X1JVMxjLx72i'
+    },
+    {
+        id: '9',
+        name: 'Nutribs',
+        type: 'Skincare Partner',
+        logo: '/SPONSORS_ LOGO/Nutribs-Skincare Partner.png',
+        website: 'https://nutribs.com/about-us'
+    },
+    {
+        id: '10',
+        name: 'Sbooch',
+        type: 'Kombucha Partner',
+        logo: '/SPONSORS_ LOGO/Sbooch- Kombucha Partner.png',
+        website: 'https://sbooch.com/pages/about-us'
+    },
+    {
+        id: '11',
+        name: 'Tata Consumer Products',
+        type: 'Snacking Partner',
+        logo: '/SPONSORS_ LOGO/Tata Consumer Products_Snacking Partner.png',
+        website: 'https://www.tataconsumer.com/about'
     }
 ];
 
@@ -408,7 +484,7 @@ export const TEAM: TeamMember[] = [
     },
     {
         id: "12",
-        name: "Sheetak Koul",
+        name: "Sheetal Koul",
         role: "Team Member",
         image: "/team/Sheetal_senior forum.jpg",
         phone: "+91 98111 28822",

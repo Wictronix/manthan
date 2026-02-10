@@ -7,16 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
-const EVENT_IMAGES: Record<string, string> = {
-    "1": "/images/02_FLAGSHIP_EVENTS/consultiss.png",
-    "2": "/images/02_FLAGSHIP_EVENTS/Dakshya.jpg",
-    "3": "/images/02_FLAGSHIP_EVENTS/Tattvabodha.jpg",
-    "4": "/images/02_FLAGSHIP_EVENTS/IMG_2637.JPG",
-    "5": "/images/02_FLAGSHIP_EVENTS/IMG_2653.JPG",
-    "6": "/images/02_FLAGSHIP_EVENTS/Jigyasa.jpg",
-    "7": "/images/02_FLAGSHIP_EVENTS/Srijan.jpg",
-    "8": "/images/02_FLAGSHIP_EVENTS/Udghosh.jpg",
-};
+
 
 const SpotlightEvents = () => {
     const spotlightEvents = EVENTS.filter((e) => e.category === "Spotlight");
@@ -81,10 +72,14 @@ const AnimatedCard = ({ event, index }: any) => {
             <div className="md:w-1/2 p-6">
                 <div className="relative w-full h-64 md:h-[380px] rounded-2xl overflow-hidden shadow-2xl group-hover:shadow-[0_0_30px_rgba(236,72,153,0.2)] transition-shadow duration-500">
                     <Image
-                        src={EVENT_IMAGES[String(event.id)] ?? "/images/02_FLAGSHIP_EVENTS/Copy of HERO BANNER _MANTHAN.png"}
+                        src={event.image || "/images/01_HERO/Copy of HERO BANNER _MANTHAN.png"}
                         alt={event.title}
                         fill
                         className="object-cover"
+                        onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = "/images/01_HERO/Copy of HERO BANNER _MANTHAN.png";
+                        }}
                     />
                 </div>
             </div>

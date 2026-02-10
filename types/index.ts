@@ -22,8 +22,8 @@ export interface Sponsor {
     id: string;
     name: string;
     logo: string;
-    tier: 'Platinum' | 'Gold' | 'Silver' | 'Associate';
-    website?: string;
+    type: string;
+    website: string;
 }
 
 export interface Faq {
