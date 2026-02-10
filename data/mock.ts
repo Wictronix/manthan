@@ -314,7 +314,7 @@ export const SPONSORS: Sponsor[] = [
         id: '3',
         name: 'WictroniX',
         type: 'Tech Partner',
-        logo: '/SPONSORS_ LOGO/Wictronix_Tech Partner.png',
+        logo: '/SPONSORS_ LOGO/wictronix.png',
         website: 'https://wictronix.com/about'
     },
     {
@@ -335,7 +335,7 @@ export const SPONSORS: Sponsor[] = [
         id: '6',
         name: 'Rashtriya Chemicals & Fertilizers',
         type: 'Event Partner',
-        logo: '/SPONSORS_ LOGO/Rashtriya Chemicals & Fertilizers- Event Partner.png',
+        logo: '/SPONSORS_ LOGO/rcf.png',
         website: 'https://www.rcfltd.com/rcf-at-glance-1'
     },
     {
